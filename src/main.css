@@ -1,0 +1,16 @@
+@import './reset';
+@import './util';
+
+
+::root {
+  --sans: 'Neue Haas';
+}
+
+body {
+  color: #000;
+  font-family: var(--sans);
+}
+
+.logo{width: 8rem}
+
+a {text-decoration: none; color: inherit}
