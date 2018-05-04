@@ -1,3 +1,5 @@
+</main>
+
 <footer class='c12 x xw xac xjb'>
   <section class='c4 tac px2 py2'>
     <div class='logo'>

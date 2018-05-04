@@ -58,3 +58,5 @@
     </nav>
   </section>
 </header>
+
+<main class='c12'>
