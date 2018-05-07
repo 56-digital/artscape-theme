@@ -20,7 +20,7 @@ body {
   line-height: 1.3;
 }
 
-.logo{width: 8rem}
+.logo{width: 10rem;}
 
 a {text-decoration: none; color: inherit}
 h1, h2, h3, h4, h5 {
@@ -57,9 +57,15 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 .bt1lg{border-top: 1px solid var(--lightGrey)}
 .br1lg{border-right: 1px solid var(--lightGrey)}
 
+.bb1b{border-bottom: 1px solid var(--black)}
+.bt1b{border-top: 1px solid var(--black)}
+.br1b{border-right: 1px solid var(--black)}
+
 .b1lg{border: 1px solid var(--lightGrey)}
+.b1b{border: 1px solid var(--black)}
 
 .bgc-b {background-color: var(--black)}
+.bgc-w {background-color: #fff}
 .bgc-g{background-color: var(--grey)}
 
 .c-w{color: #fff}
@@ -75,4 +81,14 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 
 .marquee h2{font-size: 9rem}
 
-.c {top: 50%; left: 50%; transform: translate(-50%, -50%)}
+.header-img {
+  height: 14rem 
+}
+
+.nav{position: sticky; top: -2px; left: 0; background-color: #fff}
+
+.nav-child{border-bottom: 1px solid var(--lightGrey)}
+.nav-child:last-of-type{border: none}
+.nav-child a{padding: 0.5rem 1rem;}
+.nav-sub {top: 2.5rem; opacity: 0; visibility: hidden; transition: 0.3s ease-in-out top, 0.3s ease-in-out opacity, 0.3s ease-in-out visibility;} 
+.nav-parent:hover .nav-sub {opacity: 1; visibility: visible; top: 1.5rem;}
