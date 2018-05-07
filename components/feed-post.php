@@ -19,7 +19,7 @@
     <h2 class='c12 ttu mb1'><?php if ($post_title) : echo $post_title; elseif ($post_real_title) : echo $post_real_title; endif; ?></h2>
     <p class='c12 mb1'><?php echo $post_desc; ?></p>
     <div class='c12'>
-      <div class='btn ttu'>Learn More</div>
+      <div class='btn dib ttu'>Learn More</div>
     </div>
   </a>
 </div>

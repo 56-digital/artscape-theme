@@ -1,6 +1,6 @@
 </main>
 
-<footer class='c12 x xw xac xjb'>
+<footer class='c12 x xw xac xjb bt1lg'>
   <section class='c4 tac px2 py2'>
     <div class='logo'>
       <a href='<?php echo get_bloginfo('url');?>'><img class='c12' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>

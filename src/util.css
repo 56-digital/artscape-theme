@@ -1,10 +1,3 @@
-/*!
- * small changes on the base of gr8.
- * to me it seems easier to edit this css file than create a gr8 browserify env
- * gr8.css • v3.1.3
- * github.com/jongacnik/gr8
- */
-
 .c{top:50%;left:50%;transform:translate(-50%, -50%)}
 .cy{top:50%;transform:translateY(-50%)}
 .cx{left:50%;transform: translateX(-50%)}

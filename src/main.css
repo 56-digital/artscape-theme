@@ -1,16 +1,78 @@
 @import './reset';
 @import './util';
+@import './font';
 
-
-::root {
-  --sans: 'Neue Haas';
+:root {
+  --text: 'NeueHaasGroteskText Std', 'Helvetica', Arial;
+  --title: 'NeueHaasGroteskDisp Pro', 'Helvetica', Arial;
+  --black: #0d0d0d; 
+  --lightGrey: rgba(0,0,0,0.3);
+  --grey: #f1f2f3;
 }
 
 body {
-  color: #000;
-  font-family: var(--sans);
+  color: var(--black);
+  font-family: var(--text);
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
 }
 
 .logo{width: 8rem}
 
 a {text-decoration: none; color: inherit}
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  font-family: var(--title);
+}
+
+.rounded, .btn {border-radius: 1rem}
+
+.btn {
+  border-radius: 1rem;
+  border: 1px solid var(--black);
+  font-size: 0.7rem;
+  padding: 0.2rem 1.5rem;
+  padding-top: 0.25rem;
+}
+
+.btn.btn-large { font-size: 1.1rem}
+
+.btn.btn-dark{background-color: var(--black); color: #fff;}
+.btn.btn-light{border: 1px solid #fff}
+
+.btn:hover {color: #fff; background-color: var(--black)}
+
+p {font-size: 0.9rem}
+
+h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
+
+.ofc{object-fit: cover}
+
+.bb1b{border-bottom: 1px solid var(--black)}
+
+.bb1lg{border-bottom: 1px solid var(--lightGrey)}
+.bt1lg{border-top: 1px solid var(--lightGrey)}
+.br1lg{border-right: 1px solid var(--lightGrey)}
+
+.b1lg{border: 1px solid var(--lightGrey)}
+
+.bgc-b {background-color: var(--black)}
+.bgc-g{background-color: var(--grey)}
+
+.c-w{color: #fff}
+
+.mw70{max-width: 70rem}
+.mxa{margin-left: auto; margin-right: auto}
+
+
+.fsB, h2, h3{font-size: 1.2rem}
+
+
+.sponsors-logos div { height: 7rem; }
+
+.marquee h2{font-size: 9rem}
+
+.c {top: 50%; left: 50%; transform: translate(-50%, -50%)}

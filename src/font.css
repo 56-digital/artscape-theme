@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'NeueHaasGroteskDisp Pro';
+    src: url('../assets/fonts/NHaasGroteskDSPro-75Bd.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskDSPro-75Bd.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskDSPro-75Bd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskText Std';
+    src: url('../assets/fonts/NHaasGroteskTXStd-55Rg.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskTXStd-55Rg.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskTXStd-55Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskDisp Pro';
+    src: url('../assets/fonts/NHaasGroteskDSPro-76BdIt.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskDSPro-76BdIt.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskDSPro-76BdIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskText Std';
+    src: url('../assets/fonts/NHaasGroteskTXStd-76BdIt.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskTXStd-76BdIt.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskTXStd-76BdIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskText Std';
+    src: url('../assets/fonts/NHaasGroteskTXStd-75Bd.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskTXStd-75Bd.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskTXStd-75Bd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskDisp Pro';
+    src: url('../assets/fonts/NHaasGroteskDSPro-55Rg.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskDSPro-55Rg.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskDSPro-55Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskDisp Pro';
+    src: url('../assets/fonts/NHaasGroteskDSPro-56It.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskDSPro-56It.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskDSPro-56It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasGroteskText Std';
+    src: url('../assets/fonts/NHaasGroteskTXStd-56It.woff2') format('woff2'),
+        url('../assets/fonts/NHaasGroteskTXStd-56It.woff') format('woff'),
+        url('../assets/fonts/NHaasGroteskTXStd-56It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
