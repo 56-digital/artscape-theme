@@ -48,8 +48,8 @@ get_header();
           <div class='psa t0 l0 c12 h100 oh curp'>
             <picture>
               <source media="(max-width: 799px)" srcset="<?php echo $videoImage['sizes']['medium'] ?>" type="image/jpeg" />
-              <source media="(min-width: 800px)" srcset="<?php echo $videoImage['sizes']['large'] ?>" type="image/jpeg" /> 
-              <img class='c12 h100 ofc' src='<?php echo $videoImage['sizes']['large'] ?>' alt="<?php echo $videoImage['caption'] ?>" />
+              <source media="(min-width: 800px)" srcset="<?php echo $videoImage['url'] ?>" type="image/jpeg" /> 
+              <img class='c12 h100 ofc' src='<?php echo $videoImage['url'] ?>' alt="<?php echo $videoImage['caption'] ?>" />
             </picture> 
           </div>
         </div> 
@@ -69,15 +69,15 @@ get_header();
         $iLtRText = $iLtR['text'];
       ?>
       
-      <div class='c6'>
+      <div class='c6 pr2'>
         <picture>
           <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
-          <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['sizes']['large'] ?>" type="image/jpeg" /> 
-          <img class='c12' src='<?php echo $iLtRImage['sizes']['large'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+          <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
+          <img class='c12' src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
         </picture> 
       </div>
       
-      <div class='c6 px4'>
+      <div class='c6 px2'>
         <?php echo $iLtRText; ?>
       </div>
     </div>
@@ -98,14 +98,14 @@ get_header();
     ?>
     <div class='c6 psr bt1lg bb1lg br1lg'>
       <a class='py3 db psr' href='<?php echo $CTAL_link; ?>'> 
-        <div class='fs3-2'><?php echo $CTAL_title; ?></div> 
+        <div class='fsA'><?php echo $CTAL_title; ?></div> 
         <span class='psa c c12 op0'><?php echo $CTAL_hover ?></span>
       </a>
     </div>
 
     <div class='c6 psr bt1lg bb1lg'>
       <a class='py3 db psr' href='<?php echo $CTAR_link; ?>'> 
-        <div class='fs3-2'><?php echo $CTAR_title; ?></div> 
+        <div class='fsA'><?php echo $CTAR_title; ?></div> 
         <span class='psa c c12 op0'><?php echo $CTAR_hover ?></span>
       </a>
     </div>
@@ -113,48 +113,52 @@ get_header();
 
 
   <section class='c12 py4 mt2 px2 tac'>
-    <?php
-      $facilities = get_field('our_facilities');
-      $fac_title = $facilities['title'];
-      $fac_elements = $facilities['repeating_elements'];
-      $fac_link = $facilities['link'];
-    ?>
-    <h3><?php echo $fac_title; ?></h3>
-    <div class='x xw xac xjb py2 mb2 lh1-5'>
-      <?php 
-        foreach($fac_elements as $fac_el) { ?>
-        <div class='c4 fsB'><?php echo $fac_el['title']; ?></div>
-      <?php } ?>
-    </div>
-    <div class='c12 psr mb2'>
-      <a class='btn dib' href='<?php echo $fac_link; ?>'>LEARN MORE ABOUT OUR SPACES</a> 
+    <div class='c12 mxa mw70'>
+      <?php
+        $facilities = get_field('our_facilities');
+        $fac_title = $facilities['title'];
+        $fac_elements = $facilities['repeating_elements'];
+        $fac_link = $facilities['link'];
+      ?>
+      <h3><?php echo $fac_title; ?></h3>
+      <div class='x xw xac xjb py2 mb2 lh1-5'>
+        <?php 
+          foreach($fac_elements as $fac_el) { ?>
+          <div class='c4 fsB'><?php echo $fac_el['title']; ?></div>
+        <?php } ?>
+      </div>
+      <div class='c12 psr mb2'>
+        <a class='btn dib' href='<?php echo $fac_link; ?>'>LEARN MORE ABOUT OUR SPACES</a> 
+      </div>
     </div>
   </section>
 
-  <section class='imageL_textR bgc-g c12 x xw xac xjc px2 py4 mb2'>
-    <?php 
-      $iLtRG = get_field('imageL_textR_grey');
-      $iLtRGImage = $iLtRG['image'];
-      $iLtRGText = $iLtRG['text'];
-    ?>
-    
-    <div class='c5 px2'>
-      <picture>
-        <source media="(max-width: 799px)" srcset="<?php echo $iLtRGImage['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" srcset="<?php echo $iLtRGImage['sizes']['large'] ?>" type="image/jpeg" /> 
-        <img class='c12 px4' src='<?php echo $iLtRGImage['sizes']['medium'] ?>' alt="<?php echo $iLtRGImage['caption'] ?>" />
-      </picture> 
-    </div>
-    
-    <div class='c7 px2'>
-      <?php echo $iLtRGText; ?>
+  <section class='imageL_textR bgc-g c12 px2 py4 mb2'>
+    <div class='c12 x xw xac xjc mxa mw70'>
+      <?php 
+        $iLtRG = get_field('imageL_textR_grey');
+        $iLtRGImage = $iLtRG['image'];
+        $iLtRGText = $iLtRG['text'];
+      ?>
+      
+      <div class='c5 px2'>
+        <picture>
+          <source media="(max-width: 799px)" srcset="<?php echo $iLtRGImage['sizes']['medium'] ?>" type="image/jpeg" />
+          <source media="(min-width: 800px)" srcset="<?php echo $iLtRGImage['sizes']['large'] ?>" type="image/jpeg" /> 
+          <img class='c12 px4' src='<?php echo $iLtRGImage['sizes']['medium'] ?>' alt="<?php echo $iLtRGImage['caption'] ?>" />
+        </picture> 
+      </div>
+      
+      <div class='c7 px2'>
+        <?php echo $iLtRGText; ?>
+      </div>
     </div>
   </section>
 
 
   <section class='py4 px4 bb1lg'>
     <h3 class='c12 mb1 tac'>RECENT NEWS & UPDATES</h3>
-    <div class='c12 x xw xjc xac'>
+    <div class='c12 mxa mw70 x xw xjc xac'>
       <?php 
         $args = array(
           'post_type' => 'news',
@@ -185,7 +189,7 @@ get_header();
 
   <section class='py2 px2 tac '>
     <h3 class='pt2'>OUR PARTNERS & SPONSORS</h3>
-    <div class='c12 sponsors-logos py2'>
+    <div class='c12 mxa mw70 sponsors-logos py2'>
       <?php
         $sponsors = get_field('sponsors');
         $icons = $sponsors['icons'];

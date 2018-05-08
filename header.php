@@ -48,7 +48,7 @@
   </section>
 </header>
 
-<nav class='x xw xac nav z4 bb1lg bt1lg xjb c12 px2 py1'>
+<nav class='x xw xac nav z4 bb1lg bt1lg xjb fsC c12 px2 py1'>
   <?php 
     $main_nav = wp_get_nav_menu_items('main'); 
 

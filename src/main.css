@@ -71,11 +71,13 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 .c-w{color: #fff}
 
 .mw70{max-width: 70rem}
+.mw50{max-width: 50rem}
+.mw30{max-width: 30rem}
 .mxa{margin-left: auto; margin-right: auto}
 
-
-.fsB, h2, h3{font-size: 1.2rem}
-
+.fsA, h1 {font-size: 2.7rem}
+.fsB, h2, h3, .fsB p{font-size: 1.2rem}
+.fsC, p {font-size: 0.9rem}
 
 .sponsors-logos div { height: 7rem; }
 
@@ -92,3 +94,11 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 .nav-child a{padding: 0.5rem 1rem;}
 .nav-sub {top: 2.5rem; opacity: 0; visibility: hidden; transition: 0.3s ease-in-out top, 0.3s ease-in-out opacity, 0.3s ease-in-out visibility;} 
 .nav-parent:hover .nav-sub {opacity: 1; visibility: visible; top: 1.5rem;}
+
+.about-intro {
+  height: 40vw;
+  clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
+  filter: brightness(0.5);
+}
+
+.twenty{width: 20%}
