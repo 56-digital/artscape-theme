@@ -84,10 +84,10 @@ get_header();
   ?>
   <div>
     <h2 class='c12'><?php echo $grey_title; ?></h2>
-    <div class='mw50 mxa py2'><?php echo $grey_text; ?></div> 
-    <div class='c12 db'>
-      <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
-    </div>
+      <div class='mw50 mxa px4 py2'><?php echo $grey_text; ?></div> 
+      <div class='c12 db'>
+        <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
+      </div>
   </div>
 </section>
 
