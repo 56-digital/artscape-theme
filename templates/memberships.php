@@ -91,7 +91,7 @@ get_header();
     $booking_btn2_title = $text_booking['button_2_title'];
     $booking_btn2_url = $text_booking['button_2_url']; 
   ?>
-  <div>
+  <div class='mw50 mxa px2'>
     <h2 class='c12 mb2 pt2'><?php echo $booking_title; ?></h2>
     <div class='c12 db pb2'>
       <a class='btn dib' href='<?php echo $booking_btn1_url; ?>'><?php echo $booking_btn1_title; ?></a> 

@@ -158,7 +158,7 @@ get_header();
 
   <section class='py4 px4 bb1lg'>
     <h3 class='c12 mb1 tac'>RECENT NEWS & UPDATES</h3>
-    <div class='c12 mxa mw70 x xw xjc xac'>
+    <div class='c12 x xw xjc'>
       <?php 
         $args = array(
           'post_type' => 'news',
