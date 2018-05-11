@@ -39,7 +39,7 @@ get_header();
           <img class='c12 mb1' src='<?php echo $m_image['url'] ?>' alt="<?php echo $m_image['caption'] ?>" />
         </picture> 
         <div class='c12 mb1'>
-          <h2><?php echo $m_name; ?></h2>
+          <h2 class='mb0'><?php echo $m_name; ?></h2>
           <span class='db fsC'><?php echo $m_title; ?></span>
           <span class='db fsC'><a href='mailto:<?php echo $m_email ?>'><?php echo $m_email; ?></a></span>
         </div>

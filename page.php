@@ -12,9 +12,11 @@
     <div class='c12 tac pb1'>
       <div class='mxa mw50 px2'>
         <h1><?php echo $intro_title; ?></h1>  
-        <div class='c12 fsB mb4'>
-          <?php echo $intro_text; ?>
-        </div>
+        <?php if ($intro_text) : ?>
+          <div class='c12 fsB mb4'>
+            <?php echo $intro_text; ?>
+          </div>
+        <?php endif; ?>
       </div>
 
     <?php

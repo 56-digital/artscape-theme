@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<section class='c12 py4  '>
+<section class='c12 pt4 pb4 '>
   <?php 
     $intro = get_field('intro');
     $intro_title = $intro['title'];
@@ -17,6 +17,85 @@ get_header();
       </div>
     </div>
   </div>
+</section>
+
+
+<section class='c12'>
+  <?php
+    if (have_rows('community_posts')) : while (have_rows('community_posts')) : the_row(); 
+      $id = get_sub_field('community_post');
+      $cp = get_field('intro', $id);
+      $cp_title = $cp['title'] ? $cp['title'] : get_the_title($id); 
+      $cp_text = $cp['text'];
+      $cp_url = get_the_permalink($id);
+      $cp_mem = get_field('members', $id);
+  ?>
+    <section class='c12 py3 bt1lg'>
+      <div class='mxa mw70 px2 py2'>
+        <h3 class='ttu c12 tac'><?php echo $cp_title; ?></h3>
+        <div class='c12 mw50 px2 tac mxa'><?php echo $cp_text; ?></div>
+  
+        <div class='c12 x xw xjb py2'>
+          <?php 
+            $i = 0;
+
+            foreach ($cp_mem as $mem) { 
+              $i++;
+              $m_image = $mem['image'];
+              $m_name = $mem['name'];
+              $m_title = $mem['title'];
+              $m_text = $mem['text'];
+              $m_links = $mem['links'] ? $mem['links'] : false;
+    
+              if ($i < 4) { 
+            ?>
+              <div class='person c4 px1 py1'>
+                <picture>
+                  <source media="(max-width: 799px)" srcset="<?php echo $m_image['sizes']['medium'] ?>" type="image/jpeg" />
+                  <source media="(min-width: 800px)" srcset="<?php echo $m_image['url'] ?>" type="image/jpeg" /> 
+                  <img class='c12 mb1' src='<?php echo $m_image['url'] ?>' alt="<?php echo $m_image['caption'] ?>" />
+                </picture> 
+                <div class='c12 mb1'>
+                  <h2 class='mb0'><?php echo $m_name; ?></h2>
+                  <span class='db fsC'><?php echo $m_title; ?></span>
+                </div>
+
+                <div class='c12 fsC'><?php echo $m_text; ?></div>
+                
+                <?php 
+
+                if ($m_links && count($m_links) > 0) { 
+                  echo '<div class="c12">';
+                  foreach ($m_links as $m_link) { ?>
+                    <a class='btn mb1 dib mr1 ttu' href='<?php echo $m_link['button_url']; ?>'><?php echo $m_link['button_title']; ?></a>
+          <?php
+                  } 
+                  echo '</div>';
+                } 
+                ?>
+              </div> 
+   
+          <?php 
+            }
+          } ?>
+        </div>
+  
+        <?php if (count($cp_mem) > 3) : ?>
+          <div class='c12 tac mb1'>
+            <a class='btn btn-dark btn-large dib ttu' href='<?php echo $cp_url ?>'>View All</a> 
+          </div>  
+        <?php endif ?>
+
+        <div class='c12 tac'>
+          <a class='btn btn-dark btn-large dib ttu' href='<?php echo get_bloginfo('url'); ?>/programs'>View Programs</a> 
+        </div>
+
+      
+      </div>
+    </section>
+  <?php
+    endwhile; endif;
+  ?>
 </section>
 
 <section class='imageL_textR py2'>
