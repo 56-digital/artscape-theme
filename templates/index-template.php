@@ -162,17 +162,11 @@ get_header();
       <?php 
         $args = array(
           'post_type' => 'news',
-          'posts_per_page' => 6
+          'posts_per_page' => 6,
         );
 
         $newsQuery = new WP_Query($args);
         
-        if ($newsQuery->have_posts() ) : while ($newsQuery->have_posts() ) : $newsQuery->the_post();
-          get_template_part('components/feed-post'); 
-        endwhile; endif;
-        if ($newsQuery->have_posts() ) : while ($newsQuery->have_posts() ) : $newsQuery->the_post();
-          get_template_part('components/feed-post'); 
-        endwhile; endif;
         if ($newsQuery->have_posts() ) : while ($newsQuery->have_posts() ) : $newsQuery->the_post();
           get_template_part('components/feed-post'); 
         endwhile; endif;

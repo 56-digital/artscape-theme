@@ -37,50 +37,51 @@
 </head>
 
 <body>
+<div class='x xw parent'>
 
-<header>
-  <section class='c12 psr'>
-    <div class='logo px1 z2 py1 psa t0 l0'>
-      <a href='<?php echo get_bloginfo('url');?>'><img class='c12' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>
-    </div>
-    
-    <div class='header-img bgc-g psr c12'></div>
-  </section>
-</header>
-
-<nav class='x xw xac nav z4 bb1lg bt1lg xjb fsC c12 px2 py1'>
-  <?php 
-    $main_nav = wp_get_nav_menu_items('main'); 
-
-    foreach ($main_nav as $nav_item) {
-      if ($nav_item->menu_item_parent == 0) {
-        $bool = false;
-        $parent = $nav_item->ID;
-        $menu_array = array();
- 
-        foreach ($main_nav as $submenu) {
-          if ($submenu->menu_item_parent == $parent) {
-            $bool = true;
-            array_push($menu_array, '<div class="nav-item nav-child"><a class=" db " href="' . $submenu->url . '">' . $submenu->title . '</a></div>');
-          }
-        }
+<main class='c12 asfs'>
+  <header class='c12'>
+    <section class='c12 psr'>
+      <div class='logo px1 z2 py1 psa t0 l0'>
+        <a href='<?php echo get_bloginfo('url');?>'><img class='c12' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>
+      </div>
       
-        if ($bool == true && count($menu_array) > 0) {
-          $menu_item = '<div class="nav-item nav-parent psr tac">';
-          $menu_item .= '<a class="px1 py1" href="' . $nav_item->url . '">' . $nav_item->title . '</a>';     
-          $menu_item .= '<ul class="nav-sub psa cx bgc-w z4 rounded b1lg">';
-          $menu_item .= implode($menu_array);
-          $menu_item .= '</ul>';
-          $menu_item .= '</div>';
-        } else {
-          $menu_item = '<div class="nav-item"><a class="px1 py1" href="' . $nav_item->url . '">' . $nav_item->title . '</a></div>';
+      <div class='header-img bgc-g psr c12'></div>
+    </section>
+  </header>
+
+  <nav class='x xw xac nav z4 bb1lg bt1lg xjb fsC c12 px2 py1'>
+    <?php 
+      $main_nav = wp_get_nav_menu_items('main'); 
+
+      foreach ($main_nav as $nav_item) {
+        if ($nav_item->menu_item_parent == 0) {
+          $bool = false;
+          $parent = $nav_item->ID;
+          $menu_array = array();
+   
+          foreach ($main_nav as $submenu) {
+            if ($submenu->menu_item_parent == $parent) {
+              $bool = true;
+              array_push($menu_array, '<div class="nav-item nav-child"><a class=" db " href="' . $submenu->url . '">' . $submenu->title . '</a></div>');
+            }
+          }
+        
+          if ($bool == true && count($menu_array) > 0) {
+            $menu_item = '<div class="nav-item nav-parent psr tac">';
+            $menu_item .= '<a class="px1 py1" href="' . $nav_item->url . '">' . $nav_item->title . '</a>';     
+            $menu_item .= '<ul class="nav-sub psa cx bgc-w z4 rounded b1lg">';
+            $menu_item .= implode($menu_array);
+            $menu_item .= '</ul>';
+            $menu_item .= '</div>';
+          } else {
+            $menu_item = '<div class="nav-item"><a class="px1 py1" href="' . $nav_item->url . '">' . $nav_item->title . '</a></div>';
+          }
+
+          echo $menu_item;
         }
-
-        echo $menu_item;
       }
-    }
-  ?>
-  <div class='search search-btn curp'>Search</div>
-</nav>
+    ?>
+    <div class='search search-btn curp'>Search</div>
+  </nav>
 
-<main class='c12'>

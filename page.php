@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<article class='c12 pb4 bb1lg x xw xjc'>
+<article class='c12 pb4 x xw xjc'>
   <section class='c12 pt4 pb2'>
     <?php 
       $intro = get_field('intro');
@@ -17,6 +17,8 @@
         </div>
       </div>
 
+    <?php
+      if ($intro_img) : ?>
       <div class='c12 mw70 mxa px4'>
         <figure class='c12'> 
           <picture>
@@ -29,6 +31,9 @@
           <?php endif; ?>
         </figure>
       </div>
+    <?php
+      endif; ?>
+
     </div>
   </section>
 

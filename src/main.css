@@ -111,4 +111,12 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 .twenty{width: 20%}
 .subscript { font-size: 0.7rem; padding-left: 0.3rem; transform:translateY(-0.5rem) }
 
-.img {height: calc(40vw - 12rem)}
+.img {height: calc(40vw - 12rem); background-color: var(--lightGrey)}
+
+
+.parent {
+  min-height: 100vh;
+}
+
+.asfs {align-self:flex-start}
+.asfe{align-self: flex-end}

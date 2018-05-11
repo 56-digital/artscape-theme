@@ -156,7 +156,7 @@ get_header();
     $how_steps = $how['steps'];
   ?>
   <div class='c12 mxa mw70'>
-    <section class='tac px1 py4 mw30 mxa'>
+    <section class='tac px1 pt4 pb0 mw30 mxa'>
       <h3 class='c12 tac'><?php echo $how_title; ?></h3>
       <div class='c12'><?php echo $how_text; ?></div>
     </section>
