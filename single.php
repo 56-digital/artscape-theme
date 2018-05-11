@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<article class='c12 pb4 bb1lg x xw xjc'>
+<article class='c12 pb4 x xw xjc'>
   <section class='c12 pt4 pb2'>
     <?php 
       $intro = get_field('intro');
@@ -67,7 +67,7 @@
   
   if ($fl_title && $fr_title) :  
 ?> 
-<section class='footer-linx tac x xac xw'>
+<section class='footer-linx bt1lg tac x xac xw'>
   <div class='c6 h100 br1lg'>
     <a class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
       <h2 class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
