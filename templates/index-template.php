@@ -22,8 +22,8 @@ get_header();
       $videoImage = $video['placeholder_image'];
       $videoFile = $video['video_file'];
     ?>
-    <div class='x xw xjb px2 py2 mw70 mxa'>
-      <div class='c4 pr2'>
+    <div sm='px0 py1' class='x xw xjb px2 py2 mw70 mxa'>
+      <div sm='c12 px1 pr0' class='c4 pr2'>
 
         <a href='<?php echo $darkBtnUrl; ?>' class='c12 db px2 py2 rounded mb1 bgc-b c-w tac'>
           <h2 class='mb1'><?php echo $darkTitle; ?></h2>
@@ -33,7 +33,7 @@ get_header();
           </div>
         </a>
 
-        <a href='<?php echo $lightBtnUrl; ?>' class='c12 db px2 py2 b1lg rounded tac'>
+        <a href='<?php echo $lightBtnUrl; ?>' sm='mb2' class='c12 db px2 py2 b1lg rounded tac'>
           <h2 class='mb1'><?php echo $lightTitle; ?></h2>
           <div class='mb1 db'><?php echo $lightText; ?></div>
           <div class='c12 psr'>
@@ -42,7 +42,7 @@ get_header();
         </a>
       </div>
       
-      <div class='c8 h100'>
+      <div sm='c12' class='c8 h100'>
         <div class='video h100 c12 psr'>
           <video src='<?php echo $videoFile; ?>' muted loop class='c12 h100 ofc'></video>
           <div class='psa t0 l0 c12 h100 oh curp'>
@@ -62,14 +62,14 @@ get_header();
   </section>
 
   <section class='imageL_textR mb2'>
-    <div class='c12 x xw xac xjc px2 py4 mw70 mxa'>
+    <div sm='px1 py2' class='c12 x xw xac xjc px2 py4 mw70 mxa'>
       <?php 
         $iLtR = get_field('imageL_textR');
         $iLtRImage = $iLtR['image'];
         $iLtRText = $iLtR['text'];
       ?>
       
-      <div class='c6 pr2'>
+      <div sm='c12 pr0 mb1' class='c6 pr2'>
         <picture>
           <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
           <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
@@ -77,7 +77,7 @@ get_header();
         </picture> 
       </div>
       
-      <div class='c6 px2'>
+      <div sm='c12 px0' class='c6 px2'>
         <?php echo $iLtRText; ?>
       </div>
     </div>
@@ -112,7 +112,7 @@ get_header();
   </section>
 
 
-  <section class='c12 py4 mt2 px2 tac'>
+  <section sm='mt0 px1 py3' class='c12 py4 mt2 px2 tac'>
     <div class='c12 mxa mw70'>
       <?php
         $facilities = get_field('our_facilities');
@@ -124,7 +124,7 @@ get_header();
       <div class='x xw xac xjb py2 mb2 lh1-5'>
         <?php 
           foreach($fac_elements as $fac_el) { ?>
-          <div class='c4 fsB'><?php echo $fac_el['title']; ?></div>
+          <div sm='c12' class='c4 fsB'><?php echo $fac_el['title']; ?></div>
         <?php } ?>
       </div>
       <div class='c12 psr mb2'>
@@ -133,7 +133,7 @@ get_header();
     </div>
   </section>
 
-  <section class='imageL_textR bgc-g c12 px2 py4 mb2'>
+  <section sm='py3 px1' class='imageL_textR bgc-g c12 px2 py4 mb2'>
     <div class='c12 x xw xac xjc mxa mw70'>
       <?php 
         $iLtRG = get_field('imageL_textR_grey');
@@ -141,7 +141,7 @@ get_header();
         $iLtRGText = $iLtRG['text'];
       ?>
       
-      <div class='c5 px2'>
+      <div sm='c12 mb2' class='c5 px2'>
         <picture>
           <source media="(max-width: 799px)" srcset="<?php echo $iLtRGImage['sizes']['medium'] ?>" type="image/jpeg" />
           <source media="(min-width: 800px)" srcset="<?php echo $iLtRGImage['sizes']['large'] ?>" type="image/jpeg" /> 
@@ -149,14 +149,14 @@ get_header();
         </picture> 
       </div>
       
-      <div class='c7 px2'>
+      <div sm='c12 px0' class='c7 px2'>
         <?php echo $iLtRGText; ?>
       </div>
     </div>
   </section>
 
 
-  <section class='py4 px4 bb1lg'>
+  <section sm='py2 px1' class='py4 px4 bb1lg'>
     <h3 class='c12 mb1 tac'>RECENT NEWS & UPDATES</h3>
     <div class='c12 x xw xjc'>
       <?php 
@@ -179,7 +179,6 @@ get_header();
       <div class='btn dib btn-dark btn-large curp'>LOAD MORE</div>
     </div>
   </section>
-
 
   <section class='py2 px2 tac '>
     <h3 class='pt2'>OUR PARTNERS & SPONSORS</h3>

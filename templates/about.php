@@ -20,10 +20,10 @@ get_header();
     </picture> 
   </div>
   
-  <div class='c12 tac pb3 '>
-    <div class='mxa mw50'>
+  <div sm='pb0' class='c12 tac pb3 '>
+    <div class='mxa mw50 px2'>
       <h1><?php echo $intro_title; ?></h1>  
-      <div class='c12 fsB'>
+      <div sm='fsC' class='c12 fsB'>
         <?php echo $intro_text; ?>
       </div>
     </div>
@@ -31,14 +31,14 @@ get_header();
 </section>
 
 <section class='imageL_textR py2 bb1lg'>
-  <div class='c12 x xw xac xjc px2 py4 mw70 mxa'>
+  <div sm='px1 py1' class='c12 x xw xac xjc px2 py4 mw70 mxa'>
     <?php 
       $iLtR = get_field('textL_imageR');
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
     ?>
     
-    <div class='c6 pr2'>
+    <div sm='c12 pr0 mb1' class='c6 pr2'>
       <picture>
         <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
         <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
@@ -46,7 +46,7 @@ get_header();
       </picture> 
     </div>
     
-    <div class='c6 px2'>
+    <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText; ?>
     </div>
   </div>
@@ -62,19 +62,19 @@ get_header();
     $ttr_text = $two_text['text_right'];
   ?>
   <div class='c12 x xw xjc'>
-    <div class='c6 px4 py3 br1lg'>
-      <h2 class='c12 tac'><?php echo $ttl_title; ?></h2> 
+    <div sm='c12 px1 py2 bb1lg' class='c6 px4 py3 br1lg'>
+      <h2 sm='tal' class='c12 tac'><?php echo $ttl_title; ?></h2> 
       <div class='c12'><?php echo $ttl_text; ?></div>
     </div>
 
-    <div class='c6 px4 py3'>
-      <h2 class='c12 tac'><?php echo $ttr_title; ?></h2> 
+    <div sm='c12 px1 py2' class='c6 px4 py3'>
+      <h2 sm='tal' class='c12 tac'><?php echo $ttr_title; ?></h2> 
       <div class='c12'><?php echo $ttr_text; ?></div>
     </div>
   </div> 
 </section>
 
-<section class='c12 tac bgc-g py4'>
+<section sm='py3' class='c12 tac bgc-g py4'>
   <?php 
     $text_grey = get_field('full_text_grey');
     $grey_title = $text_grey['title'];
@@ -84,26 +84,26 @@ get_header();
   ?>
   <div>
     <h2 class='c12'><?php echo $grey_title; ?></h2>
-      <div class='mw50 mxa px4 py2'><?php echo $grey_text; ?></div> 
+      <div sm='px1 py1 tal' class='mw50 mxa px4 py2 mb1'><?php echo $grey_text; ?></div> 
       <div class='c12 db'>
         <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
       </div>
   </div>
 </section>
 
-<section class='imageL_textR py2 bb1lg'>
-  <div class='c12 x xw xac xjc px2 py4 mw70 mxa'>
+<section sm='py0' class='imageL_textR py2 bb1lg'>
+  <div sm='px1 py2' class='c12 x xw xac xjc px2 py4 mw70 mxa'>
     <?php 
       $iRtL = get_field('imageL_textR');
       $iRtLImage = $iRtL['image'];
       $iRtLText = $iRtL['text'];
     ?>
 
-    <div class='c6 px2'>
+    <div sm='c12 px0 mb0 xo2' class='c6 px2'>
       <?php echo $iRtLText; ?>
     </div>
 
-    <div class='c6 pr2'>
+    <div sm='c12 pr0 xo1 mb1' class='c6 pr2'>
       <picture>
         <source media="(max-width: 799px)" srcset="<?php echo $iRtLImage['sizes']['medium'] ?>" type="image/jpeg" />
         <source media="(min-width: 800px)" srcset="<?php echo $iRtLImage['url'] ?>" type="image/jpeg" /> 
@@ -127,18 +127,18 @@ get_header();
     $fr_btn_url = $footer_right['button_url'];
     
   ?> 
-  <div class='c6 h100 br1lg'>
-    <a class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
+  <div sm='c12' class='c6 h100 br1lg'>
+    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
+      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
       <div class='c12 pb4'>
         <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
       </div>
     </a>
   </div> 
 
-  <div class='c6 h100'>
-    <a class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
+  <div sm='c12' class='c6 h100'>
+    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
+      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
       <div class='c12 pb4'>
         <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
       </div>

@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<section class='c12 py4  '>
+<section sm='pt2 pb1' class='c12 py4'>
   <?php 
     $intro = get_field('intro');
     $intro_title = $intro['title'];
@@ -12,16 +12,16 @@ get_header();
   <div class='c12 tac pb1'>
     <div class='mxa mw50 px2'>
       <h1><?php echo $intro_title; ?></h1>  
-      <div class='c12 fsB'>
+      <div sm='fsC' class='c12 fsB'>
         <?php echo $intro_text; ?>
       </div>
     </div>
   </div>
 </section>
 
-<section class='c12 py3 b1lg'>
-  <h2 class='c12 px2 pt1 ttu tac'>What's included in a full-access membership</h2>
-  <div class='mw70 mxa x xw xjc px2'>
+<section sm='border0 py1' class='c12 py3 b1lg'>
+  <h2 sm='mb3' class='c12 px2 pt1 ttu tac'>What's included in a full-access membership</h2>
+  <div sm='px0' class='mw70 mxa x xw xjc px2'>
     <?php
       $args = array(
         'post_type' => 'memberships',
@@ -30,7 +30,7 @@ get_header();
       $q = new WP_Query($args);
 
       if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
-        <div class='c6 px2 py2'>
+        <div sm='c12 px1 pt0 pb1' class='c6 px2 py2'>
             <?php 
               $intro = get_field('intro');
               $title = $intro['title']; 
@@ -38,10 +38,10 @@ get_header();
               $desc = $intro['short_description'] ? $intro['short_description'] : '';
               $url = get_the_permalink();
             ?>
-          <a href='<?php echo $url; ?>' class='rounded tac dib bgc-g px2 py2'>
+          <a sm='px1' href='<?php echo $url; ?>' class='rounded tac dib bgc-g px2 py2'>
             <h3 class='c12 ttu'><?php echo $t; ?></h3>
             <div class='c12 mb2 fsC'><?php echo $desc; ?></div>
-            <div class='c12 mb1'>
+            <div class='c12'>
               <div class='btn dib ttu'>Read More</div>
             </div>
           </a>
@@ -53,7 +53,7 @@ get_header();
   </div>
 </section>
 
-<section class='c12 py4'>
+<section sm='pt3 pb0' class='c12 pt4 pb0'>
   <h2 class='c12 px2 tac ttu'>Membership Types</h2>
   <div class='c12 mw70 mxa c-w px1 py1'>
   <?php
@@ -64,8 +64,8 @@ get_header();
       $mem_btn_url = get_sub_field('button_url'); 
       $mem_text = get_sub_field('text'); 
   ?>
-        <section class='c12 bgc-b px2 py2 x xw mb2 rounded'>
-          <div class='c6'>
+        <section sm='px mb1' class='c12 bgc-b px2 py2 x xw mb2 rounded'>
+          <div sm='c12 mb2' class='c6'>
             <h3 class='mb0'><?php echo $mem_title; ?></h3>
             <div class='c12 mb1 fsB'>
               <span><?php echo $mem_price; ?></span><span class='dib subscript'>billed annually</span>
@@ -76,13 +76,25 @@ get_header();
             </div>
           </div> 
   
-          <div class='c6'><?php echo $mem_text; ?></div>
+          <div sm='c12' class='c6'><?php echo $mem_text; ?></div>
         </section>
   <?php endwhile; endif; ?> 
   </div>
 </section>
 
-<section class='c12 tac bgc-g py4'>
+<section sm='pt0 px1' class='c12 pt1 pb4 px2 bb1lg'>
+  <div sm='py1' class='py4 tac'>
+    <?php 
+      $mem_card = get_field('membership_rate_card');
+      $mem_card_title = $mem_card['button_title'];
+      $mem_card_file = $mem_card['button_file'] ? $mem_card['button_file'] : $mem_card['button_url'];
+    ?>
+    <a class='btn btn-dark btn-large dib' href='<?php echo $mem_card_file; ?>'><?php echo $mem_card_title; ?></a>
+  </div>
+</section>
+
+
+<section sm='py2 bb1lg' class='c12 tac bgc-g py4'>
   <?php 
     $text_booking = get_field('booking_grey_block');
     $booking_title = $text_booking['text'];
@@ -97,17 +109,6 @@ get_header();
       <a class='btn dib' href='<?php echo $booking_btn1_url; ?>'><?php echo $booking_btn1_title; ?></a> 
       <a class='btn dib' href='<?php echo $booking_btn2_url; ?>'><?php echo $booking_btn2_title; ?></a> 
     </div>
-  </div>
-</section>
-
-<section class='c12 py4 px2 bb1lg'>
-  <div class='py4 tac'>
-    <?php 
-      $mem_card = get_field('membership_rate_card');
-      $mem_card_title = $mem_card['button_title'];
-      $mem_card_file = $mem_card['button_file'] ? $mem_card['button_file'] : $mem_card['button_url'];
-    ?>
-    <a class='btn btn-dark btn-large dib' href='<?php echo $mem_card_file; ?>'><?php echo $mem_card_title; ?></a>
   </div>
 </section>
 
@@ -129,17 +130,17 @@ get_header();
     
   ?>
   <div class='c12 x xw xjc tac'>
-    <div class='c6 px4 py3 br1lg'>
+    <div sm='c12 px1 py3 bb1lg' class='c6 px4 py3 br1lg'>
       <h2 class='c12 tac'><?php echo $textL_title; ?></h2> 
-      <div class='c12'><?php echo $textL_text; ?></div>
+      <div class='c12 mb1'><?php echo $textL_text; ?></div>
       <div class='c12 tac'>
         <a class='btn' href='<?php echo $textL_btn_url; ?>'><?php echo $textL_btn_title; ?></a>
       </div>
     </div>
 
-    <div class='c6 px4 py3'>
+    <div sm='c12 px1 py3' class='c6 px4 py3'>
       <h2 class='c12 tac'><?php echo $textR_title; ?></h2> 
-      <div class='c12'><?php echo $textR_text; ?></div>
+      <div class='c12 mb1'><?php echo $textR_text; ?></div>
       <div class='c12 tac'>
         <a class='btn' href='<?php echo $textR_btn_url; ?>'><?php echo $textR_btn_title; ?></a>
       </div>
@@ -156,15 +157,15 @@ get_header();
     $how_steps = $how['steps'];
   ?>
   <div class='c12 mxa mw70'>
-    <section class='tac px1 pt4 pb0 mw30 mxa'>
+    <section sm='pt3 pb2' class='tac px1 pt4 pb0 mw30 mxa'>
       <h3 class='c12 tac'><?php echo $how_title; ?></h3>
       <div class='c12'><?php echo $how_text; ?></div>
     </section>
     
-    <section class='steps c12 px4 py2 x xw'>
+    <section sm='px0' class='steps c12 px4 py2 x xw'>
       <?php 
         foreach($how_steps as $how_step) { ?>
-        <div class='step px4 py4 c6'>
+        <div sm='c12 pt0 pb3' class='step px4 py4 c6'>
           <div class='rounded b1lg px2 py2'>
             <span class='db fsC'>STEP</span>
             <h3><?php echo $how_step['step_title']; ?></h3>
@@ -176,7 +177,7 @@ get_header();
   </div>
 </section>
 
-<section class='c12 tac bgc-g py4'>
+<section sm='py3 bb1lg' class='c12 tac bgc-g py4'>
   <?php 
     $text_grey = get_field('text_centered_grey');
     $grey_title = $text_grey['title'];
@@ -186,7 +187,7 @@ get_header();
   ?>
   <div>
       <h2 class='c12'><?php echo $grey_title; ?></h2>
-      <div class='mw50 mxa px4 py2'><?php echo $grey_text; ?></div> 
+      <div sm='py1 px2 mb1' class='mw50 mxa px4 py2'><?php echo $grey_text; ?></div> 
       <div class='c12 db'>
         <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
       </div>
@@ -206,22 +207,23 @@ get_header();
     $fr_btn_url = $footer_right['button_url'];
     
   ?> 
-  <div class='c6 h100 br1lg'>
-    <a class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
+  <div sm='c12' class='c6 h100 br1lg'>
+    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
+      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
       <div class='c12 pb4'>
         <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
       </div>
     </a>
   </div> 
 
-  <div class='c6 h100'>
-    <a class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
+  <div sm='c12' class='c6 h100'>
+    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
+      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
       <div class='c12 pb4'>
         <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
       </div>
     </a>
   </div> 
 </section>
+
 <?php get_footer(); ?>

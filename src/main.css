@@ -17,6 +17,14 @@
   html {font-size: 180%}
 }
 
+@media (max-width: 800px) {
+  html{font-size: 80%;}
+}
+
+@media (max-width: 600px) {
+  html{font-size: 100%};
+}
+
 body {
   color: var(--black);
   font-family: var(--text);
@@ -53,6 +61,7 @@ h1, h2, h3, h4, h5 {
 .btn:hover {color: #fff; background-color: var(--black)}
 
 p {font-size: 0.9rem}
+p:last-of-type{margin-bottom: 0}
 
 h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 
@@ -128,4 +137,35 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
   width: 16px; height: 16px;
 }
 
+@media (max-width: 600px) {
+  .fsA, h1 {font-size: 2rem}
+  [sm~='fsA']{font-size: 2.7rem}
+  [sm~='fsB']{font-size: 1.6rem}
+  [sm~='fsC'], [sm~='fsC'] p {font-size: 0.8rem}
+  .fsC, p {font-size: 0.8rem}
+
+  [sm~='fsD']{font-size: 0.7rem} 
+
+  .img {height: calc(60vw); background-color: var(--lightGrey)}
+
+  .about-intro {
+    height: 60vw;
+    clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
+    filter: brightness(0.5);
+  }
+
+  [sm~='bb1b']{border-bottom: 1px solid var(--black)}
+
+  [sm~='bb1lg']{border-bottom: 1px solid var(--lightGrey)}
+  [sm~='bt1lg']{border-top: 1px solid var(--lightGrey)}
+  [sm~='br1lg']{border-right: 1px solid var(--lightGrey)}
+
+  [sm~='bb1b']{border-bottom: 1px solid var(--black)}
+  [sm~='bt1b']{border-top: 1px solid var(--black)}
+  [sm~='br1b']{border-right: 1px solid var(--black)}
+
+  [sm~='b1lg']{border: 1px solid var(--lightGrey)}
+  [sm~='b1b']{border: 1px solid var(--black)}
+  [sm~='border0']{border: 0px}
+}
 

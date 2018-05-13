@@ -12,7 +12,7 @@
 
   $post_real_title = get_the_title($ID);
   ?>
-<div class='c6 px2 py2'>
+<div sm='c12 px0' class='c6 px2 py2'>
   <a href='<?php echo $post_url; ?>'>
     <div class='mb1 img c12 oh'>
       <?php 
@@ -28,7 +28,7 @@
       <?php endif; ?>
     </div> 
     <h2 class='c12 ttu mb1'><?php if ($post_title) : echo $post_title; elseif ($post_real_title) : echo $post_real_title; endif; ?></h2>
-    <p class='c12 mb1'><?php echo $post_desc; ?></p>
+    <p class='c12 pb1 mb1'><?php echo $post_desc; ?></p>
     <div class='c12'>
       <div class='btn dib ttu'>Learn More</div>
     </div>
