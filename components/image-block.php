@@ -7,9 +7,9 @@
 <section class='c12'>
   <figure <?php if (!$full_width) { echo 'sm="mw70 mxa px1 py2"'; } else { echo 'sm="py1"'; } ?> class='c12 <?php if (!$full_width) { echo 'mw70 mxa px4'; } ?> py4'> 
     <picture>
-      <source media="(max-width: 799px)" srcset="<?php echo $img_block['sizes']['medium'] ?>" type="image/jpeg" />
-      <source media="(min-width: 800px)" srcset="<?php echo $img_block['url'] ?>" type="image/jpeg" /> 
-      <img class='c12 vab' src='<?php echo $img_block['url'] ?>' alt="<?php echo $intro_img['caption'] ?>" />
+      <source media="(max-width: 799px)" data-srcset="<?php echo $img_block['sizes']['medium'] ?>" type="image/jpeg" />
+      <source media="(min-width: 800px)" data-srcset="<?php echo $img_block['url'] ?>" type="image/jpeg" /> 
+      <img class='c12 vab' data-src='<?php echo $img_block['url'] ?>' alt="<?php echo $intro_img['caption'] ?>" />
     </picture> 
     <?php if ($caption) : ?>
       <figcaption class='<?php if ($full_width) { echo 'px1'; } ?> py1 fsC tal'><?php echo $caption; ?></figcaption> 

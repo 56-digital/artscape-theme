@@ -21,9 +21,9 @@
       <?php if ($intro_img) : ?>
         <figure class='c12'> 
           <picture>
-            <source media="(max-width: 799px)" srcset="<?php echo $intro_img['sizes']['medium'] ?>" type="image/jpeg" />
-            <source media="(min-width: 800px)" srcset="<?php echo $intro_img['url'] ?>" type="image/jpeg" /> 
-            <img class='c12' src='<?php echo $intro_img['url'] ?>' alt="<?php echo $intro_img['caption'] ?>" />
+            <source media="(max-width: 799px)" data-srcset="<?php echo $intro_img['sizes']['medium'] ?>" type="image/jpeg" />
+            <source media="(min-width: 800px)" data-srcset="<?php echo $intro_img['url'] ?>" type="image/jpeg" /> 
+            <img class='c12' data-src='<?php echo $intro_img['url'] ?>' alt="<?php echo $intro_img['caption'] ?>" />
           </picture> 
           <?php if ($intro_img['caption']) : ?>
             <figcaption class='py1 fsC tal'><?php echo $intro_img['caption']; ?></figcaption> 

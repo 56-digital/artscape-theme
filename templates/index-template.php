@@ -43,15 +43,15 @@ get_header();
       </div>
       
       <div sm='c12' class='c8 h100'>
-        <div class='video h100 c12 psr'>
-          <video src='<?php echo $videoFile; ?>' muted loop class='c12 h100 ofc'></video>
-          <div class='psa t0 l0 c12 h100 oh curp'>
+        <div class='video bgc-b h100 c12 psr'>
+          <video data-src='<?php echo $videoFile; ?>'  loop class='c12 h100 ofc'></video>
+          <figure class='psa t0 l0 c12 h100 oh curp'>
             <picture>
-              <source media="(max-width: 799px)" srcset="<?php echo $videoImage['sizes']['medium'] ?>" type="image/jpeg" />
-              <source media="(min-width: 800px)" srcset="<?php echo $videoImage['url'] ?>" type="image/jpeg" /> 
-              <img class='c12 h100 ofc' src='<?php echo $videoImage['url'] ?>' alt="<?php echo $videoImage['caption'] ?>" />
+              <source media="(max-width: 799px)" data-srcset="<?php echo $videoImage['sizes']['medium'] ?>" type="image/jpeg" />
+              <source media="(min-width: 800px)" data-srcset="<?php echo $videoImage['url'] ?>" type="image/jpeg" /> 
+              <img class='c12 h100 ofc op0 t-o' data-src='<?php echo $videoImage['url'] ?>' alt="<?php echo $videoImage['caption'] ?>" />
             </picture> 
-          </div>
+          </figure>
         </div> 
       </div>
     </div>
@@ -71,9 +71,9 @@ get_header();
       
       <div sm='c12 pr0 mb1' class='c6 pr2'>
         <picture>
-          <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
-          <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
-          <img class='c12' src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+          <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
+          <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
+          <img class='c12 op0 t-o' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
         </picture> 
       </div>
       
@@ -97,16 +97,16 @@ get_header();
       $CTAR_link = $CTAR['link'];
     ?>
     <div class='c6 psr bt1lg bb1lg br1lg'>
-      <a class='py3 db psr' href='<?php echo $CTAL_link; ?>'> 
+      <a class='py3 db psr h-parent' href='<?php echo $CTAL_link; ?>'> 
         <div class='fsA'><?php echo $CTAL_title; ?></div> 
-        <span class='psa c c12 op0'><?php echo $CTAL_hover ?></span>
+        <span class='psa c c12 op0 h-child'><?php echo $CTAL_hover ?></span>
       </a>
     </div>
 
     <div class='c6 psr bt1lg bb1lg'>
-      <a class='py3 db psr' href='<?php echo $CTAR_link; ?>'> 
+      <a class='py3 db psr h-parent' href='<?php echo $CTAR_link; ?>'> 
         <div class='fsA'><?php echo $CTAR_title; ?></div> 
-        <span class='psa c c12 op0'><?php echo $CTAR_hover ?></span>
+        <span class='psa c c12 op0 h-child'><?php echo $CTAR_hover ?></span>
       </a>
     </div>
   </section>
@@ -143,9 +143,9 @@ get_header();
       
       <div sm='c12 mb2' class='c5 px2'>
         <picture>
-          <source media="(max-width: 799px)" srcset="<?php echo $iLtRGImage['sizes']['medium'] ?>" type="image/jpeg" />
-          <source media="(min-width: 800px)" srcset="<?php echo $iLtRGImage['sizes']['large'] ?>" type="image/jpeg" /> 
-          <img class='c12 px4' src='<?php echo $iLtRGImage['sizes']['medium'] ?>' alt="<?php echo $iLtRGImage['caption'] ?>" />
+          <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRGImage['sizes']['medium'] ?>" type="image/jpeg" />
+          <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRGImage['sizes']['large'] ?>" type="image/jpeg" /> 
+          <img class='c12 px4 op0 t-o' data-src='<?php echo $iLtRGImage['sizes']['medium'] ?>' alt="<?php echo $iLtRGImage['caption'] ?>" />
         </picture> 
       </div>
       
@@ -190,7 +190,7 @@ get_header();
         $sponsor_url = $sponsors['button_url'];
         
         foreach($icons as $icon) {  ?>
-          <div class='dib px1 py1'><img class='h100' src='<?php echo $icon['icon']['sizes']['large']; ?>'/></div> 
+          <div class='dib px1 py1'><img class='h100 op0 t-o' data-src='<?php echo $icon['icon']['sizes']['large']; ?>'/></div> 
         <?php } ?>
     </div>
     <div class='c12 py2 px2 tac'>

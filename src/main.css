@@ -37,6 +37,9 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
   font-family: var(--title);
 }
+.invert {
+  filter: invert(100%);
+}
 
 .rounded, .btn {border-radius: 1rem}
 .nav-ul {flex-grow: 1;}
@@ -97,6 +100,8 @@ ul {text-decoration: none; list-style-type: none}
 .mw30{max-width: 30rem}
 .mxa{margin-left: auto; margin-right: auto}
 
+.t-o {transition: 0.3s ease-in-out opacity}
+
 .fsA, h1 {font-size: 2.7rem}
 .fsB, h2, h3, .fsB p{font-size: 1.2rem}
 .fsC, p {font-size: 0.9rem}
@@ -111,6 +116,20 @@ ul {text-decoration: none; list-style-type: none}
 .header-img {
   height: 200px; 
 }
+
+img[data-src] {
+  opacity: 0;
+  transition: 0.3s ease-in-out opacity;
+
+  &.loaded{opacity:1}
+}
+
+.search-icon2 svg {width: 2.5rem; height: 2.5rem}
+.search-bg{background-color: rgba(255, 255, 255, 0.9)}
+.search{z-index: 10; opacity: 0; visibility: hidden; transform: scale(1.5, 1.5); transition: 0.3s ease-in-out opacity, 0.3s ease-in-out visibility, 0.3s ease-in-out transform}
+.search.open{opacity: 1; visibility: visible; transform: none}
+.h-parent:hover .h-child.op0 {opacity: 100}
+.h-parent:hover div{opacity: 0}
 
 .nav{position: sticky; top: -2px; left: 0; background-color: #fff; font-size: 14px; padding: 0px 20px}
 .nav-item {padding: 14px 10px}
@@ -140,6 +159,8 @@ footer .footer-logo {padding: 40px 20px}
 
 .img {height: calc(40vw - 12rem); background-color: var(--lightGrey)}
 
+.video.playing img {display: none}
+
 
 .parent {
   min-height: 100vh;
@@ -147,6 +168,11 @@ footer .footer-logo {padding: 40px 20px}
 
 .asfs {align-self:flex-start}
 .asfe{align-self: flex-end}
+
+.search input {
+  -webkit-appearance: none;
+  outline: none;
+}
 
 form {
   & label { line-height: 1.5; margin-bottom: 0.3rem; display: block; } 
@@ -178,6 +204,7 @@ footer button {
 }
 footer label {font-size: 10px}
 .nl {padding: 10px 40px}
+.header-caption {padding: 20px}
 
 .search-icon svg {
   width: 16px; height: 16px;
@@ -206,7 +233,10 @@ footer label {font-size: 10px}
     
     & svg {height: 30px; width: 30px;}
   }
-  
+
+  .header-caption {
+    top: inherit; bottom: 0;
+  }
 
   .mob-logo {display: block}
   .nav {

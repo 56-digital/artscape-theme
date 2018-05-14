@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <section class='c12 pb4 bb1lg'>
-  <div class='c12 psr mb2 about-intro oh'>
+  <div class='c12 psr mb2 bgc-b about-intro oh'>
 
     <?php
       $cover_photo = get_field('cover_photo');
@@ -14,9 +14,9 @@ get_header();
 
     ?>
     <picture>
-      <source media="(max-width: 799px)" srcset="<?php echo $cover_photo['sizes']['medium'] ?>" type="image/jpeg" />
-      <source media="(min-width: 800px)" srcset="<?php echo $cover_photo['url'] ?>" type="image/jpeg" /> 
-      <img class='c12 h100 ofc' src='<?php echo $cover_photo['url'] ?>' alt="<?php echo $cover_photo['caption'] ?>" />
+      <source media="(max-width: 799px)" data-srcset="<?php echo $cover_photo['sizes']['medium'] ?>" type="image/jpeg" />
+      <source media="(min-width: 800px)" data-srcset="<?php echo $cover_photo['url'] ?>" type="image/jpeg" /> 
+      <img class='c12 h100 ofc' data-src='<?php echo $cover_photo['url'] ?>' alt="<?php echo $cover_photo['caption'] ?>" />
     </picture> 
   </div>
   
@@ -40,9 +40,9 @@ get_header();
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
       <picture>
-        <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
-        <img class='c12' src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+        <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
+        <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
+        <img class='c12' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
       </picture> 
     </div>
     
@@ -105,9 +105,9 @@ get_header();
 
     <div sm='c12 pr0 xo1 mb1' class='c6 pr2'>
       <picture>
-        <source media="(max-width: 799px)" srcset="<?php echo $iRtLImage['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" srcset="<?php echo $iRtLImage['url'] ?>" type="image/jpeg" /> 
-        <img class='c12' src='<?php echo $iRtLImage['url'] ?>' alt="<?php echo $iRtLImage['caption'] ?>" />
+        <source media="(max-width: 799px)" data-srcset="<?php echo $iRtLImage['sizes']['medium'] ?>" type="image/jpeg" />
+        <source media="(min-width: 800px)" data-srcset="<?php echo $iRtLImage['url'] ?>" type="image/jpeg" /> 
+        <img class='c12 ' data-src='<?php echo $iRtLImage['url'] ?>' alt="<?php echo $iRtLImage['caption'] ?>" />
       </picture> 
     </div>
    </div>

@@ -28,18 +28,18 @@
         $m_text = get_sub_field('text');
         $m_links = get_sub_field('links');
     ?>
-        <div class='person c4 px1 py1'>
+        <div sm='c12' class='person c4 px1 py1'>
           <picture>
-            <source media="(max-width: 799px)" srcset="<?php echo $m_image['sizes']['medium'] ?>" type="image/jpeg" />
-            <source media="(min-width: 800px)" srcset="<?php echo $m_image['url'] ?>" type="image/jpeg" /> 
-            <img class='c12 mb1' src='<?php echo $m_image['url'] ?>' alt="<?php echo $m_image['caption'] ?>" />
+            <source media="(max-width: 799px)" data-srcset="<?php echo $m_image['sizes']['medium'] ?>" type="image/jpeg" />
+            <source media="(min-width: 800px)" data-srcset="<?php echo $m_image['url'] ?>" type="image/jpeg" /> 
+            <img class='c12 mb1' data-src='<?php echo $m_image['url'] ?>' alt="<?php echo $m_image['caption'] ?>" />
           </picture> 
           <div class='c12 mb1'>
             <h2 class='mb0'><?php echo $m_name; ?></h2>
             <span class='db fsC'><?php echo $m_title; ?></span>
           </div>
 
-          <div class='c12 fsC'><?php echo $m_text; ?></div>
+          <div class='c12 fsC mb1'><?php echo $m_text; ?></div>
           
           <?php 
 

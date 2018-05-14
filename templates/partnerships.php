@@ -29,9 +29,9 @@ get_header();
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
       <picture>
-        <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
-        <img class='c12' src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+        <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
+        <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
+        <img class='c12' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
       </picture> 
     </div>
     
@@ -78,7 +78,7 @@ get_header();
         if (have_rows('logos')) : while (have_rows('logos')) : the_row(); 
           $icon = get_sub_field('logo');
       ?>
-          <div sm='px1 py2' class='dib twenty px2 py2 vam'><img class='c12 vam' src='<?php echo $icon['sizes']['large']; ?>'/></div> 
+          <div sm='px1 py2' class='dib twenty px2 py2 vam'><img class='c12 vam' data-src='<?php echo $icon['sizes']['large']; ?>'/></div> 
               
       <?php
         endwhile; endif;

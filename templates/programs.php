@@ -29,9 +29,9 @@ get_header();
     
     <div sm='c12 px0 mb1' class='c6 pr2'>
       <picture>
-        <source media="(max-width: 799px)" srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
-        <img class='c12' src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+        <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
+        <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
+        <img class='c12' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
       </picture> 
     </div>
     
@@ -108,12 +108,12 @@ get_header();
  ?>
   <div sm='py1 px1' class='mw50 c12 px4 py4 my2 mxa'>
     <div class='video h100 c12 psr'>
-      <video src='<?php echo $video_file; ?>' muted loop class='c12 h100 ofc'></video>
+      <video data-src='<?php echo $video_file; ?>' muted loop class='c12 h100 ofc'></video>
       <div class='psa t0 l0 c12 h100 oh curp'>
         <picture>
-          <source media="(max-width: 799px)" srcset="<?php echo $video_img['sizes']['medium'] ?>" type="image/jpeg" />
-          <source media="(min-width: 800px)" srcset="<?php echo $video_img['url'] ?>" type="image/jpeg" /> 
-          <img class='c12 h100 ofc' src='<?php echo $video_img['url'] ?>' alt="<?php echo $video_img['caption'] ?>" />
+          <source media="(max-width: 799px)" data-srcset="<?php echo $video_img['sizes']['medium'] ?>" type="image/jpeg" />
+          <source media="(min-width: 800px)" data-srcset="<?php echo $video_img['url'] ?>" type="image/jpeg" /> 
+          <img class='c12 h100 ofc vam' data-src='<?php echo $video_img['url'] ?>' alt="<?php echo $video_img['caption'] ?>" />
         </picture> 
       </div>
     </div> 

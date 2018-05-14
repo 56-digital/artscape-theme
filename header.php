@@ -45,16 +45,49 @@
   </svg>
 </aside>
 
+
+<aside class='search psf t0 c0 h100 c12' id='search'>
+  <div class='psr search-bg h100 c12 x xw xac px1 py1'>
+    <div class='psa t0 l0 px1 py1 search-close curp'>
+      <span class='search-icon2 vam'>
+        <svg class='vam' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+      </span>
+      <span sm='fsC' class='fsB ttu vam'>Press ESC to close</span> 
+    </div>
+    <input type='text' sm='fsB' placeholder='Press enter to search' class='fsA px1 py1 tac c12' />
+  </div>
+
+</aside>
+
 <div class='x xw parent'>
 
 <main class='c12 asfs'>
   <header class='c12'>
     <section class='c12 psr'>
       <div class='logo z2 psa t0 l0'>
-        <a href='<?php echo get_bloginfo('url');?>'><img class='c12' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>
+        <a href='<?php echo get_bloginfo('url');?>'><img class='c12 invert' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>
       </div>
       
-      <div class='header-img bgc-g psr c12'></div>
+      <div class='header-img bgc-b psr c12 oh' data-imgs='<?php
+      $img_array = array();
+      if (have_rows('header_photos', 6)) : while (have_rows('header_photos', 6)) : the_row(); 
+       array_push($img_array, array(
+          "image" => get_sub_field('image'),
+          "caption" => get_sub_field('caption')
+        )); 
+    
+      endwhile; endif;
+      
+      print_r(json_encode($img_array));
+       ?>'>
+        <figure>
+          <img class='c12 op0 t-o h100 ofc header_photo' />
+        </figure>
+        <aside class='header-caption psa t0 r0 c-w'></aside>
+      </div>
     </section>
 
   </header>
@@ -108,7 +141,7 @@
             }
           }
         ?>
-        <li class='nav-item search search-btn curp'>
+        <li class='nav-item search-btn search-open curp'>
           <span>Search</span>
           <span class='search-icon '>
             <svg class='vam' viewBox="0 0 24 24">

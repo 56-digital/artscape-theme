@@ -37,6 +37,6 @@
 
 <?php wp_footer(); ?>
 
-<script defer src='<?php echo get_bloginfo('template_url'); ?>/dist/index.js'></script>
+<script defer src='<?php echo get_bloginfo('template_url'); ?>/dist/bundle.js'></script>
 </body>
 </html>
