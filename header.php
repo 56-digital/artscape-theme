@@ -37,6 +37,14 @@
 </head>
 
 <body>
+
+<aside class='mob-nav-btn curp psf r0 t0'>
+  <svg class='vam' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+  </svg>
+</aside>
+
 <div class='x xw parent'>
 
 <main class='c12 asfs'>
@@ -48,10 +56,26 @@
       
       <div class='header-img bgc-g psr c12'></div>
     </section>
+
   </header>
 
-  <nav class='x xw xjb nav z4 bb1lg bt1lg xjb c12'>
-    <div class='c12 mxa x xw xjb xac'>
+  <nav class='x xw xjb nav z4 bb1lg bt1lg psr xjb c12'>
+    <aside class='mob-nav-btn mob-nav-btn2 curp psa'>
+      <svg class='vam' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </aside>
+
+    <div class='mob-logo db'>
+      <div class='logo z2 psa t0 l0'>
+        <a href='<?php echo get_bloginfo('url');?>'><img class='c12' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>
+      </div>
+    </div>
+  
+
+    <div class='c12 nav-container mxa x xw xjb xac'>
+
       <ul class='nav-ul x xw xjb xac br1lg h100'>
         <?php 
           $main_nav = wp_get_nav_menu_items('main'); 
