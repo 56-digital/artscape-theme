@@ -50,46 +50,68 @@
     </section>
   </header>
 
-  <nav class='x xw xac nav z4 bb1lg bt1lg xjb c12'>
-    <?php 
-      $main_nav = wp_get_nav_menu_items('main'); 
+  <nav class='x xw xjb nav z4 bb1lg bt1lg xjb c12'>
+    <div class='c12 mxa x xw xjb xac'>
+      <ul class='nav-ul x xw xjb xac br1lg h100'>
+        <?php 
+          $main_nav = wp_get_nav_menu_items('main'); 
 
-      foreach ($main_nav as $nav_item) {
-        if ($nav_item->menu_item_parent == 0) {
-          $bool = false;
-          $parent = $nav_item->ID;
-          $menu_array = array();
-   
-          foreach ($main_nav as $submenu) {
-            if ($submenu->menu_item_parent == $parent) {
-              $bool = true;
-              array_push($menu_array, '<div class="nav-item nav-child"><a class=" db " href="' . $submenu->url . '">' . $submenu->title . '</a></div>');
+          foreach ($main_nav as $nav_item) {
+            if ($nav_item->menu_item_parent == 0) {
+              $bool = false;
+              $parent = $nav_item->ID;
+              $menu_array = array();
+       
+              foreach ($main_nav as $submenu) {
+                if ($submenu->menu_item_parent == $parent) {
+                  $bool = true;
+                  array_push($menu_array, '<div class="nav-child"><a class=" db " href="' . $submenu->url . '">' . $submenu->title . '</a></div>');
+                }
+              }
+            
+              if ($bool == true && count($menu_array) > 0) {
+                $menu_item = '<li class="nav-item nav-parent psr tac">';
+                $menu_item .= '<a class="" href="' . $nav_item->url . '">' . $nav_item->title . '</a>';     
+                $menu_item .= '<ul class="nav-sub psa cx bgc-w z4 rounded b1lg">';
+                $menu_item .= implode($menu_array);
+                $menu_item .= '</ul>';
+                $menu_item .= '</li>';
+              } else {
+                $menu_item = '<li class="nav-item"><a class="" href="' . $nav_item->url . '">' . $nav_item->title . '</a></li>';
+              }
+
+              echo $menu_item;
             }
           }
-        
-          if ($bool == true && count($menu_array) > 0) {
-            $menu_item = '<div class="nav-item nav-parent psr tac">';
-            $menu_item .= '<a class="px1 py1" href="' . $nav_item->url . '">' . $nav_item->title . '</a>';     
-            $menu_item .= '<ul class="nav-sub psa cx bgc-w z4 rounded b1lg">';
-            $menu_item .= implode($menu_array);
-            $menu_item .= '</ul>';
-            $menu_item .= '</div>';
-          } else {
-            $menu_item = '<div class="nav-item"><a class="px1 py1" href="' . $nav_item->url . '">' . $nav_item->title . '</a></div>';
+        ?>
+        <li class='nav-item search search-btn curp'>
+          <span>Search</span>
+          <span class='search-icon '>
+            <svg class='vam' viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </span>
+        </li>
+      </ul>
+
+      <div class='header-links'>
+        <?php 
+          $header_links = get_field('header_links', 6);
+          $hl1_title = $header_links['link1_title'];
+          $hl1_url = $header_links['link1_url'];
+          $hl2_title = $header_links['link2_title'];
+          $hl2_url = $header_links['link2_url'];
+
+          if ($hl1_title) { 
+            echo '<a class="dib btn-nav btn btn-dark" href="' . $hl1_url . '">' . $hl1_title . '</a>';
           }
 
-          echo $menu_item;
-        }
-      }
-    ?>
-    <div class='search search-btn curp'>
-      <span>Search</span>
-      <span class='search-icon '>
-        <svg class='vam' viewBox="0 0 24 24">
-          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-          <path d="M0 0h24v24H0z" fill="none"/>
-        </svg>
-      </span>
+          if ($hl2_title) { 
+            echo '<a class="dib btn-nav btn-nav2 btn btn-dark" href="' . $hl2_url . '">' . $hl2_title . '</a>';
+          }
+        ?>
+      </div>
     </div>
   </nav>
 

@@ -14,7 +14,7 @@
 }
 
 @media (min-width: 1600px) {
-  html {font-size: 180%}
+  html {font-size: 140%}
 }
 @media (max-width: 600px) {
   html{font-size: 100%};
@@ -39,6 +39,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .rounded, .btn {border-radius: 1rem}
+.nav-ul {flex-grow: 1;}
+
+.btn-nav.btn {
+  border-radius: 13px;
+  font-size: 10px;
+  padding: 4px 20px;
+}
+.btn-nav.btn-nav2{margin-left: 10px}
+
+.header-links {padding: 0px 20px;} 
 
 .btn {
   border-radius: 1rem;
@@ -60,6 +70,7 @@ p:last-of-type{margin-bottom: 0}
 
 h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 
+ul {text-decoration: none; list-style-type: none}
 .ofc{object-fit: cover}
 
 .bb1b{border-bottom: 1px solid var(--black)}
@@ -101,13 +112,19 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
   height: 200px; 
 }
 
-.nav{position: sticky; top: -2px; left: 0; background-color: #fff; font-size: 14px; padding: 10px 20px}
+.nav{position: sticky; top: -2px; left: 0; background-color: #fff; font-size: 14px; padding: 0px 20px}
+.nav-item {padding: 14px 10px}
 
 .nav-child{border-bottom: 1px solid var(--lightGrey)}
 .nav-child:last-of-type{border: none}
-.nav-child a{padding: 0.5rem 1rem;}
-.nav-sub {top: 2.5rem; opacity: 0; visibility: hidden; transition: 0.3s ease-in-out top, 0.3s ease-in-out opacity, 0.3s ease-in-out visibility;} 
-.nav-parent:hover .nav-sub {opacity: 1; visibility: visible; top: 1.5rem;}
+.nav-child a{padding: 8px 14px;}
+.nav-sub {top: 50px; opacity: 0; visibility: hidden; transition: 0.3s ease-in-out top, 0.3s ease-in-out opacity, 0.3s ease-in-out visibility;} 
+.nav-parent:hover .nav-sub {opacity: 1; visibility: visible; top: 40px;}
+
+footer nav {padding:10px 30px}
+footer section {height: 200px}
+footer {font-size: 14px}
+.footer-text{font-size: 10px}
 
 .about-intro {
   height: 40vw;
@@ -144,8 +161,20 @@ form {
 
   & .form-input.c6 { width: 46% }
   & .c4 { width: 28% }  
-
 }
+
+footer input {
+  margin: 8px 0;
+  padding: 4px 8px; border: 1px solid var(--lightGrey)
+}
+footer button {
+  font-size: 10px;
+  padding: 7px 8px;
+  background-color: var(--black);
+  color: #fff;
+}
+footer label {font-size: 10px}
+.nl {padding: 10px 40px}
 
 .search-icon svg {
   width: 16px; height: 16px;

@@ -20,10 +20,10 @@ get_header();
 </section>
 
 <section class='c12'>
-  <div class='c12 mw70 mxa px2'>
+  <div sm='px1' class='c12 mw70 mxa px2'>
     <div class='py3'>
       <h3 class='ttu c12 tac'>How to Contact Us</h3>
-      <div class='c12 mw50 mxa px2 tac'>
+      <div class='c12 mw50 mxa px2 tac fsC'>
          Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service. 
       </div>
     </div>
@@ -32,7 +32,7 @@ get_header();
       <form>
         <div class='c12 x xw '>
 
-          <div class='c6 fsC x xw xjb px1'>
+          <div sm='c12 mb1' class='c6 fsC x xw xjb px1'>
             <section class='form-input c12'>
               <label>Subject</label>
               <select>
@@ -87,14 +87,17 @@ get_header();
             </section>
           </div>
 
-          <div class='c6 px1 fsC x xw xjb '>
+          <div sm='c12' class='c6 px1 fsC x xw xjb '>
             <section class='form-input c12 mb0 h100'>
               <label>Message</label>
               <textarea class=''></textarea>
             </section>
           </div>
         </div> 
-
+  
+        <div class='c12 tac py4'>
+          <button class='btn dib btn-large btn-dark'>SUBMIT</button> 
+        </div>
       </form>
     </div>
   </div>
