@@ -113,7 +113,6 @@ get_header();
    </div>
 </section>
 
-
 <section class='footer-linx tac x xac xw'>
   <?php
     $footer_left = get_field('footer_left');

@@ -121,7 +121,7 @@ get_header();
         $fac_link = $facilities['link'];
       ?>
       <h3><?php echo $fac_title; ?></h3>
-      <div class='x xw xac xjb py2 mb2 lh1-5'>
+      <div sm='py1' class='x xw xac xjb py2 mb2 lh1-5'>
         <?php 
           foreach($fac_elements as $fac_el) { ?>
           <div sm='c12' class='c4 fsB'><?php echo $fac_el['title']; ?></div>
@@ -180,9 +180,9 @@ get_header();
     </div>
   </section>
 
-  <section class='py2 px2 tac '>
+  <section sm='py1' class='py2 px2 tac '>
     <h3 class='pt2'>OUR PARTNERS & SPONSORS</h3>
-    <div class='c12 mxa mw70 sponsors-logos py2'>
+    <div sm='py1' class='c12 mxa mw70 sponsors-logos py2'>
       <?php
         $sponsors = get_field('sponsors');
         $icons = $sponsors['icons'];

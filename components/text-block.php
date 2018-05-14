@@ -3,7 +3,7 @@
 ?>
 
 <section class='c12'>
-  <div class='mw50 mxa px4 py2'>
+  <div sm='px1 py1' class='mw50 mxa px4 py2'>
     <?php echo $text_block; ?>
   </div>
 </section>

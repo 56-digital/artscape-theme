@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<article class='c12 pb4 x xw xjc'>
-  <section class='c12 pt4 pb2'>
+<article sm='pb1' class='c12 pb4 x xw xjc'>
+  <section sm='py2' class='c12 pt4 pb2'>
     <?php 
       $intro = get_field('intro');
       $intro_title = $intro['title'] ? $intro['title'] : get_the_title();
@@ -12,12 +12,13 @@
     <div class='c12 tac pb1'>
       <div class='mxa mw50 px2'>
         <h1><?php echo $intro_title; ?></h1>  
-        <div class='c12 fsB mb4'>
+        <div sm='fsC mb2' class='c12 fsB mb4'>
           <?php echo $intro_text; ?>
         </div>
       </div>
 
-      <div class='c12 mw70 mxa px4'>
+      <div sm='px1' class='c12 mw70 mxa px4'>
+      <?php if ($intro_img) : ?>
         <figure class='c12'> 
           <picture>
             <source media="(max-width: 799px)" srcset="<?php echo $intro_img['sizes']['medium'] ?>" type="image/jpeg" />
@@ -28,6 +29,7 @@
             <figcaption class='py1 fsC tal'><?php echo $intro_img['caption']; ?></figcaption> 
           <?php endif; ?>
         </figure>
+      <?php endif; ?> 
       </div>
     </div>
   </section>
@@ -68,23 +70,24 @@
   if ($fl_title && $fr_title) :  
 ?> 
 <section class='footer-linx bt1lg tac x xac xw'>
-  <div class='c6 h100 br1lg'>
-    <a class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
+  <div sm='c12' class='c6 h100 br1lg'>
+    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
+      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
       <div class='c12 pb4'>
         <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
       </div>
     </a>
   </div> 
 
-  <div class='c6 h100'>
-    <a class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
+  <div sm='c12' class='c6 h100'>
+    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
+      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
       <div class='c12 pb4'>
         <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
       </div>
     </a>
   </div> 
 </section>
+
 <?php endif; ?>
 <?php get_footer(); ?>

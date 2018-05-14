@@ -3,8 +3,8 @@
   $video_image = get_sub_field('video_placeholder');
 ?>
 
-<section class='c12 py4'>
-  <div class='mxa mw70 px4'>
+<section sm='py2' class='c12 py4'>
+  <div sm='px1' class='mxa mw70 px4'>
     <div class='video h100 c12 psr'>
       <video src='<?php echo $video_file; ?>' muted loop class='c12 h100 ofc'></video>
       <div class='psa t0 l0 c12 h100 oh curp'>

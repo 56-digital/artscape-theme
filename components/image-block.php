@@ -5,7 +5,7 @@
 ?>
 
 <section class='c12'>
-  <figure class='c12 <?php if (!$full_width) { echo 'mw70 mxa px4'; } ?> py4'> 
+  <figure <?php if (!$full_width) { echo 'sm="mw70 mxa px1 py2"'; } else { echo 'sm="py1"'; } ?> class='c12 <?php if (!$full_width) { echo 'mw70 mxa px4'; } ?> py4'> 
     <picture>
       <source media="(max-width: 799px)" srcset="<?php echo $img_block['sizes']['medium'] ?>" type="image/jpeg" />
       <source media="(min-width: 800px)" srcset="<?php echo $img_block['url'] ?>" type="image/jpeg" /> 

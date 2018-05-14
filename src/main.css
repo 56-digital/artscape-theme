@@ -16,11 +16,6 @@
 @media (min-width: 1600px) {
   html {font-size: 180%}
 }
-
-@media (max-width: 800px) {
-  html{font-size: 80%;}
-}
-
 @media (max-width: 600px) {
   html{font-size: 100%};
 }
@@ -133,11 +128,37 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
 .asfs {align-self:flex-start}
 .asfe{align-self: flex-end}
 
+form {
+  & label { line-height: 1.5; margin-bottom: 0.3rem; display: block; } 
+  & input, & textarea, & select { 
+    border: 0; border-radius: 0px;
+    width: 100%; border: 1px solid var(--lightGrey);
+    padding: 0.5rem 0.5rem;
+
+  }
+  
+  & .form-input { margin-bottom: 1rem }
+  & .form-input.mb0{margin-bottom: 0rem}
+  & textarea {height: 93.5%}
+
+
+  & .form-input.c6 { width: 46% }
+  & .c4 { width: 28% }  
+
+}
+
 .search-icon svg {
   width: 16px; height: 16px;
 }
 
+@media (max-width: 1000px) {
+  html{font-size: 80%;}
+  .img {height: calc(45vw - 12rem); }
+}
+
+
 @media (max-width: 600px) {
+  html{font-size: 120%}
   .fsA, h1 {font-size: 2rem}
   [sm~='fsA']{font-size: 2.7rem}
   [sm~='fsB']{font-size: 1.6rem}
@@ -153,6 +174,8 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
     clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
     filter: brightness(0.5);
   }
+  
+  .twenty {width: 33.33%;}
 
   [sm~='bb1b']{border-bottom: 1px solid var(--black)}
 
@@ -167,5 +190,9 @@ h1, h2, h3, h4, h5, h6, p {margin-bottom: 1rem}
   [sm~='b1lg']{border: 1px solid var(--lightGrey)}
   [sm~='b1b']{border: 1px solid var(--black)}
   [sm~='border0']{border: 0px}
+}
+
+@media (max-width: 400px) {
+  html{font-size: 80%}
 }
 

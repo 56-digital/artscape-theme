@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class='c12 pt4 pb2 '>
+<section sm='pt2' class='c12 pt4 pb2 '>
   <?php 
     $intro = get_field('intro');
     $intro_title = $intro['title'] ? $intro['title'] : get_the_title();
@@ -10,7 +10,7 @@
   <div class='c12 tac pb1'>
     <div class='mxa mw50 px2'>
       <h1><?php echo $intro_title; ?></h1>  
-      <div class='c12 fsB'>
+      <div sm='fsC' class='c12 fsB'>
         <?php echo $intro_text; ?>
       </div>
     </div>

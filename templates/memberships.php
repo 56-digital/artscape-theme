@@ -104,7 +104,7 @@ get_header();
     $booking_btn2_url = $text_booking['button_2_url']; 
   ?>
   <div class='mw50 mxa px2'>
-    <h2 class='c12 mb2 pt2'><?php echo $booking_title; ?></h2>
+    <h2 class='c12 mb2 pt2 mb0'><?php echo $booking_title; ?></h2>
     <div class='c12 db pb2'>
       <a class='btn dib' href='<?php echo $booking_btn1_url; ?>'><?php echo $booking_btn1_title; ?></a> 
       <a class='btn dib' href='<?php echo $booking_btn2_url; ?>'><?php echo $booking_btn2_title; ?></a> 
@@ -186,7 +186,7 @@ get_header();
     $grey_btn_url = $text_grey['button_url']; 
   ?>
   <div>
-      <h2 class='c12'><?php echo $grey_title; ?></h2>
+      <h2 class='c12 mb0'><?php echo $grey_title; ?></h2>
       <div sm='py1 px2 mb1' class='mw50 mxa px4 py2'><?php echo $grey_text; ?></div> 
       <div class='c12 db'>
         <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 

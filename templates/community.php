@@ -30,7 +30,7 @@ get_header();
       $cp_url = get_the_permalink($id);
       $cp_mem = get_field('members', $id);
   ?>
-    <section sm='py1' class='c12 py3 bt1lg'>
+    <section sm='py1' class='c12 py2 bt1lg'>
       <div sm='px1' class='mxa mw70 px2 py2'>
         <h3 class='ttu c12 tac'><?php echo $cp_title; ?></h3>
         <div sm='px0' class='c12 mw50 px2 tac mxa'><?php echo $cp_text; ?></div>

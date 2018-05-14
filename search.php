@@ -8,7 +8,7 @@ $args = array(
 );
 ?>
 
-<section class='c12 py4  '>
+<section sm='pt2 pb1' class='c12 py4  '>
   <?php 
   ?>
 
@@ -19,7 +19,7 @@ $args = array(
   </div>
 </section>
 
-<section class='c12 px4 pb4'>
+<section sm='px1' class='c12 px4 pb4'>
   <div class='c12 x xw xjc'>
     <?php
       $qq = new WP_Query($args);
