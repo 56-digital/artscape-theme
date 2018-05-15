@@ -62,6 +62,22 @@ get_header();
   </div>
 </section>
 
+<section id='space' class='c12 py2 curd'>
+  <?php 
+    $space = get_field('the_space_image');
+    
+  ?>
+  <div class='space-container oh psr bgc-b'>
+    <figure class='space-parent oh c12'>
+      <picture>
+        <source media="(max-width: 799px)" data-srcset="<?php echo $space['sizes']['medium'] ?>" type="image/jpeg" />
+        <source media="(min-width: 800px)" data-srcset="<?php echo $space['url'] ?>" type="image/jpeg" /> 
+        <img class='c12 h100 ofc op0 t-o' data-src='<?php echo $space['url'] ?>' alt="<?php echo $space['caption'] ?>" />
+      </picture> 
+    </figure>
+  </div>
+</section>
+
 <section sm='px1 py2' class='py4 px4 bb1lg'>
   <div class='c12 mxa x xw xjc'>
     <?php 

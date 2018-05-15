@@ -41,7 +41,7 @@ get_header();
   </div>
 </section>
 
-<section class='c12'>
+<section class='c12 pb4'>
   <div sm='px1 py1' class='c12 mxa mw70 px2 py2'>
   <?php 
     if (have_rows('careers')) : while (have_rows('careers')) : the_row(); 
@@ -51,14 +51,14 @@ get_header();
     $text = get_sub_field('text');
     $url = get_the_permalink();
   ?>
-    <div class='py1 bb1lg'>
+    <div class='py1 bb1lg career-post oh'>
       <div class='c12 x xw xac curp'>
         <div sm='c12' class='c6 pr1'><h3 class='mb0'><?php echo $title; ?></h3></div> 
         <div sm='c12' class='c3 pr1'><h3 class='mb0'><?php echo $loc; ?></h3></div> 
         <div sm='c12' class='c3 pr1'><h3 class='mb0'><?php echo $pos; ?></h3></div> 
       </div>
       
-      <div class=c12'>
+      <div class='c12 career-content'>
         <div sm='c12 pt1' class='pt2 c6 fsC mb1'>
           <?php echo $text; ?>
         </div> 

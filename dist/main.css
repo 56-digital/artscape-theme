@@ -352,7 +352,11 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;overflow-y:scroll;-webk
   padding-top: 0.25rem;
 }.btn.btn-large { font-size: 17.6px; font-size: 1.1rem}.btn.btn-dark{background-color: #0d0d0d; color: #fff;}.btn.btn-light{border: 1px solid #fff}.btn:hover {color: #fff; background-color: #0d0d0d}p {font-size: 14.4px;font-size: 0.9rem}p:last-of-type{margin-bottom: 0}h1, h2, h3, h4, h5, h6, p {margin-bottom: 16px;margin-bottom: 1rem}ul {text-decoration: none; list-style-type: none}.ofc{-o-object-fit: cover;object-fit: cover}.bb1b{border-bottom: 1px solid #0d0d0d}.bb1lg{border-bottom: 1px solid rgba(0, 0, 0, .3)}.bt1lg{border-top: 1px solid rgba(0, 0, 0, .3)}.br1lg{border-right: 1px solid rgba(0, 0, 0, .3)}.bb1b{border-bottom: 1px solid #0d0d0d}.bt1b{border-top: 1px solid #0d0d0d}.br1b{border-right: 1px solid #0d0d0d}.b1lg{border: 1px solid rgba(0, 0, 0, .3)}.b1b{border: 1px solid #0d0d0d}.bgc-b {background-color: #0d0d0d}.bgc-w {background-color: #fff}.bgc-g{background-color: #f1f2f3}.c-w{color: #fff}.mw70{max-width: 1120px;max-width: 70rem}.mw50{max-width: 800px;max-width: 50rem}.mw30{max-width: 480px;max-width: 30rem}.mxa{margin-left: auto; margin-right: auto}.t-o {-webkit-transition: 0.3s ease-in-out opacity;transition: 0.3s ease-in-out opacity}.fsA, h1 {font-size: 43.2px;font-size: 2.7rem}.fsB, h2, h3, .fsB p{font-size: 19.2px;font-size: 1.2rem}.fsC, p {font-size: 14.4px;font-size: 0.9rem}.fsD {font-size: 11.2px;font-size: 0.7rem}.xas{-webkit-box-align: stretch;-ms-flex-align: stretch;align-items: stretch}.sponsors-logos div { height: 112px; height: 7rem; }.marquee h2{font-size: 144px;font-size: 9rem}.header-img {
   height: 200px; 
-}img[data-src] {
+}#map {height: calc(60vw - 8rem)}.space-container img {z-index: 0 !important}.space-container {
+  height: 60vw;
+  overflow: hidden;
+  cursor: move !important;
+}.career-content {max-height: 0}.career-post.open .career-content {max-height: 480px;max-height: 30rem}img[data-src] {
   opacity: 0;
   -webkit-transition: 0.3s ease-in-out opacity;
   transition: 0.3s ease-in-out opacity
@@ -461,6 +465,8 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;overflow-y:scroll;-webk
   footer section {height: inherit}
   footer nav {padding: 40px}
   .nl {padding-top: 40px; padding-bottom: 00px} 
+  .marquee h2{font-size: 4rem}
+  #map {height: calc(100vw - 2rem)}
 }@media (max-width: 400px) {
   html{font-size: 110%}
 }

@@ -57,8 +57,8 @@ get_header();
     </div>
   </section>
 
-  <section class='marquee c12 psr py4'>
-    <h2><?php echo get_field('marquee_text'); ?></h2>
+  <section sm='pt2 pb0' class='marquee marquee3k c12 psr pt4 pb2 oh' data-speed='2'>
+    <h2 sm='fsB'><?php echo get_field('marquee_text'); ?></h2>
   </section>
 
   <section class='imageL_textR mb2'>

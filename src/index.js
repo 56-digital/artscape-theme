@@ -1,4 +1,7 @@
 const util = require('./util')
+const marquee = require('./marquee')
+
+const marqueeEl = document.querySelector('.marquee')
 
 const websitePrefix = 'launchpad'
 
@@ -17,6 +20,21 @@ const searchInput = search.querySelector('input')
 const searchOpen = document.querySelector('.search-open')
 const searchClose = document.querySelector('.search-close')
 
+const space = document.querySelector('.space-container')
+
+const careerPosts = document.querySelectorAll('.career-post')
+
+const mapEl = document.querySelector('.map')
+let map
+
+
+const handleCareers = () => {
+  careerPosts.forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('open')
+    })
+  }) 
+}
 
 const handleSearchEvents = () => {
   
@@ -109,13 +127,20 @@ const setupHeader = () => {
   console.log(item)
 }
 
-
 const init = () => {
   loadDataEls()
   setupHeader()
   setupNav()
   handleVideos()
   handleSearchEvents()
+  
+  if (marqueeEl) {
+    console.log('yo')
+    marquee()
+  }
+
+  if (space) require('./drag') 
+  if (careerPosts) handleCareers()
 }
 
 document.addEventListener('DOMContentLoaded', init)

@@ -113,6 +113,24 @@ get_header();
    </div>
 </section>
 
+<section class='c12 pt2 bb1lg'>
+  <div sm='py1 px1' class='mw70 mxa px2 py2'>
+    <h3 class='ttu tac mb2'>Our Location</h3>
+
+    <div id='map' class='map'>
+
+    </div>
+    <div class='x xw xjb py2'>
+      <div sm='c12 mb0' class='c6'>
+        <h3>29 Queens Quay E <br/> Toronto, ON, M5E 0A4 </h3>
+      </div>
+    
+      <div sm='c12' class='c6'>
+        <?php echo get_field('location_text'); ?>
+      </div>
+    </div>
+</section>
+
 <section class='footer-linx tac x xac xw'>
   <?php
     $footer_left = get_field('footer_left');

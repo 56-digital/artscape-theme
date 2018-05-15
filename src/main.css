@@ -117,6 +117,18 @@ ul {text-decoration: none; list-style-type: none}
   height: 200px; 
 }
 
+#map {height: calc(60vw - 8rem)}
+.space-container img {z-index: 0 !important}
+.space-container {
+  height: 60vw;
+  overflow: hidden;
+  cursor: move !important;
+}
+
+
+.career-content {max-height: 0}
+.career-post.open .career-content {max-height: 30rem}
+
 img[data-src] {
   opacity: 0;
   transition: 0.3s ease-in-out opacity;
@@ -301,6 +313,8 @@ footer label {font-size: 10px}
   footer section {height: inherit}
   footer nav {padding: 40px}
   .nl {padding-top: 40px; padding-bottom: 00px} 
+  .marquee h2{font-size: 4rem}
+  #map {height: calc(100vw - 2rem)}
 }
 
 @media (max-width: 400px) {
