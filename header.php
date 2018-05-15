@@ -100,24 +100,19 @@
       </svg>
     </aside>
 
-    <div class='mob-logo db'>
-      <div class='logo z2 psa t0 l0'>
-        <a href='<?php echo get_bloginfo('url');?>'><img class='c12' src='<?php echo get_template_directory_uri(); ?>/assets/logo.png' alt='Artscape Daniels Launchpad'></a>
-      </div>
-    </div>
-  
-
-    <div class='c12 nav-container mxa x xw xjb xac'>
+    <div class='c12 nav-container mxa x xw xjb xac mw70'>
 
       <ul class='nav-ul x xw xjb xac br1lg h100'>
         <?php 
           $main_nav = wp_get_nav_menu_items('main'); 
+          $current_url = get_the_permalink();
 
           foreach ($main_nav as $nav_item) {
             if ($nav_item->menu_item_parent == 0) {
               $bool = false;
               $parent = $nav_item->ID;
               $menu_array = array();
+              $bold = $current_url === $nav_item->url ? 'bold' : '';
        
               foreach ($main_nav as $submenu) {
                 if ($submenu->menu_item_parent == $parent) {
@@ -128,20 +123,20 @@
             
               if ($bool == true && count($menu_array) > 0) {
                 $menu_item = '<li class="nav-item nav-parent psr tac">';
-                $menu_item .= '<a class="" href="' . $nav_item->url . '">' . $nav_item->title . '</a>';     
+                $menu_item .= '<a class="' . $bold . '" href="' . $nav_item->url . '">' . $nav_item->title . '</a>';     
                 $menu_item .= '<ul class="nav-sub psa cx bgc-w z4 rounded b1lg">';
                 $menu_item .= implode($menu_array);
                 $menu_item .= '</ul>';
                 $menu_item .= '</li>';
               } else {
-                $menu_item = '<li class="nav-item"><a class="" href="' . $nav_item->url . '">' . $nav_item->title . '</a></li>';
+                $menu_item = '<li class="nav-item"><a class="yo ' . $bold . '" href="' . $nav_item->url . '">' . $nav_item->title . '</a></li>';
               }
 
               echo $menu_item;
             }
           }
         ?>
-        <li class='nav-item search-btn search-open curp'>
+        <li class='nav-item a search-btn search-open curp'>
           <span>Search</span>
           <span class='search-icon '>
             <svg class='vam' viewBox="0 0 24 24">
@@ -172,3 +167,4 @@
     </div>
   </nav>
 
+<article>

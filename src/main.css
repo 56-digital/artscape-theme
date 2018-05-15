@@ -10,9 +10,6 @@
   --grey: #f1f2f3;
 }
 
-@media (min-width: 1200px) {
-}
-
 @media (min-width: 1600px) {
   html {font-size: 140%}
 }
@@ -42,12 +39,24 @@ h1, h2, h3, h4, h5 {
 }
 
 .rounded, .btn {border-radius: 1rem}
-.nav-ul {flex-grow: 1;}
+.nav-ul {flex-grow: 1; padding-right: 20px}
+.header-img img{filter: brightness(0.5)}
 
 .btn-nav.btn {
   border-radius: 13px;
   font-size: 10px;
   padding: 4px 20px;
+}
+
+article section {
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: 0.3s ease-in-out opacity, 0.3s ease-in-out transform;
+}
+
+article section.in {
+  opacity: 1; 
+  transform: translateY(0)
 }
 .btn-nav.btn-nav2{margin-left: 10px}
 
@@ -95,7 +104,7 @@ ul {text-decoration: none; list-style-type: none}
 
 .c-w{color: #fff}
 
-.mw70{max-width: 70rem}
+.mw70{max-width: 80rem}
 .mw50{max-width: 50rem}
 .mw30{max-width: 30rem}
 .mxa{margin-left: auto; margin-right: auto}
@@ -109,13 +118,26 @@ ul {text-decoration: none; list-style-type: none}
 
 .xas{align-items: stretch}
 
-.sponsors-logos div { height: 7rem; }
+a.bold {opacity: 0.4}
 
-.marquee h2{font-size: 9rem}
+.sponsors-logos div { height: 12rem; }
 
-.header-img {
-  height: 200px; 
+.marquee h2{font-size: 9rem; box-sizing: border-box; padding-right:4rem}
+
+.header-img {height: 350px; }
+@media (min-width: 1600px) {
+  .header-img {height: 500px}
 }
+@media (max-width: 800px) {
+  .header-img {height: 200px}
+}
+
+a:not(.btn), .a{transition: 0.3s ease-in-out opacity}
+a:not(.btn):hover, .a:hover {
+  opacity: 0.7; 
+}
+
+p a {text-decoration: underline}
 
 #map {height: calc(60vw - 8rem)}
 .space-container img {z-index: 0 !important}
@@ -126,7 +148,7 @@ ul {text-decoration: none; list-style-type: none}
 }
 
 
-.career-content {max-height: 0}
+.career-content {max-height: 0; transition: 0.3s ease-in-out max-height}
 .career-post.open .career-content {max-height: 30rem}
 
 img[data-src] {
@@ -136,14 +158,21 @@ img[data-src] {
   &.loaded{opacity:1}
 }
 
-.search-icon2 svg {width: 2.5rem; height: 2.5rem}
+.search-icon2 svg, .search-icon2 {width: 1.6rem; height: 1.6rem}
+.search-icon2 svg {transform: translateY(-0.1rem)}
 .search-bg{background-color: rgba(255, 255, 255, 0.9)}
-.search{z-index: 10; opacity: 0; visibility: hidden; transform: scale(1.5, 1.5); transition: 0.3s ease-in-out opacity, 0.3s ease-in-out visibility, 0.3s ease-in-out transform}
+.search{z-index: 100; opacity: 0; visibility: hidden;  transition: 0.3s ease-in-out opacity, 0.3s ease-in-out visibility, 0.3s ease-in-out transform}
+
+.search-close {transform: translateY(2rem); opacity: 0; transition: 0.3s ease-in-out opacity, 0.3s ease-in-out transform}
+.search-close.open {opacity: 1; transform: translateY(0)}
+
+.search input {transform: translateY(2rem); opacity: 0; transition: 0.3s ease-in-out opacity, 0.3s ease-in-out transform}
+.search input.open{opacity: 1; transform: translateY(0)}
 .search.open{opacity: 1; visibility: visible; transform: none}
 .h-parent:hover .h-child.op0 {opacity: 100}
 .h-parent:hover div{opacity: 0}
 
-.nav{position: sticky; top: -2px; left: 0; background-color: #fff; font-size: 14px; padding: 0px 20px}
+.nav{position: sticky; top: -2px; left: 0; background-color: #fff; font-size: 14px; padding: 0px 20px; padding-right: 0;}
 .nav-item {padding: 14px 10px}
 
 .nav-child{border-bottom: 1px solid var(--lightGrey)}
@@ -221,19 +250,25 @@ footer label {font-size: 10px}
 .search-icon svg {
   width: 16px; height: 16px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .nav{font-size: 12px}
   .btn-nav.btn {font-size: 9px}
 }
+
+@media (max-width: 1088px) {
+  .nav{font-size: 11px; padding-left: 10px;}
+  .btn-nav.btn {font-size: 9px}
+  .header-links{padding: 0 10px}
+}
+
+
 
 @media (max-width: 1000px) {
   html{font-size: 80%;}
   .img {height: calc(45vw - 12rem); }
 }
 
-
-
-@media (max-width: 974px) {
+@media (max-width: 1010px) {
   .mob-nav-btn {
     top: 10px; right: 10px;
     border-radius: 14px;
@@ -271,7 +306,7 @@ footer label {font-size: 10px}
     & .nav-parent:hover .nav-sub {top: 0}
 
 
-    & .nav-container { padding-top: 100px; align-items: start}
+    & .nav-container { padding-top: 10px; align-items: start}
   }
   .header-links {display: none}
 }
@@ -315,6 +350,7 @@ footer label {font-size: 10px}
   .nl {padding-top: 40px; padding-bottom: 00px} 
   .marquee h2{font-size: 4rem}
   #map {height: calc(100vw - 2rem)}
+  .sponsors-logos div { height: 6rem; }
 }
 
 @media (max-width: 400px) {

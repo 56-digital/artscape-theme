@@ -3,7 +3,6 @@ get_header();
 
 ?>
 
-<article>
   <section class='c12 '>
     <?php 
       $dark_link = get_field('dark_link');
@@ -42,8 +41,8 @@ get_header();
         </a>
       </div>
       
-      <div sm='c12' class='c8 h100'>
-        <div class='video bgc-b h100 c12 psr'>
+      <div sm='c12' class='c8'>
+        <div class='video h100 oh c12 psr'>
           <video data-src='<?php echo $videoFile; ?>'  loop class='c12 h100 ofc'></video>
           <figure class='psa t0 l0 c12 h100 oh curp'>
             <picture>
@@ -197,6 +196,5 @@ get_header();
       <a href='' class='btn dib'>SEE ALL</a>
     </div>
   </section>
-</article>
 
 <?php get_footer(); ?>

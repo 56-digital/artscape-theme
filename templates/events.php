@@ -59,7 +59,7 @@ get_header();
         $btn_url = get_field('button_url');
         $cur_url = get_the_permalink();
 ?>
-        <div sm='lh1-5 py2' class='x xw bb1lg py1 fsC xac'>
+        <div sm='lh1-5 py2' class='x xw bb1lg py2 fsC xac'>
           <div sm='c12' class='c3 mb0 pr1'><?php echo $title; ?></div>
           <div sm='c12' class='c3 mb0 pr1'><?php echo $date; ?></div>
           <div sm='c12 mb1' class='c3 mb0 pr1'><?php echo $loc_name; ?></div>
@@ -78,7 +78,7 @@ get_header();
   </div>
 </section>
 
-<section class='footer-linx tac x xac xw'>
+<section class='footer-linx tac x xac xw bt1lg'>
   <?php
     $footer_left = get_field('footer_left');
     $fl_title = $footer_left['title'];

@@ -82,7 +82,7 @@ get_header();
   </div>
 </section>
 
-<section sm='pt0 px1' class='c12 pt1 pb4 px2 bb1lg'>
+<section sm='pt0 px1' class='c12 pt1 pb4 px2'>
   <div sm='py1' class='py4 tac'>
     <?php 
       $mem_card = get_field('membership_rate_card');
@@ -94,7 +94,7 @@ get_header();
 </section>
 
 
-<section sm='py2 bb1lg' class='c12 tac bgc-g py4'>
+<section sm='py2 bb1lg' class='c12 tac bgc-g py4 bb1lg'>
   <?php 
     $text_booking = get_field('booking_grey_block');
     $booking_title = $text_booking['text'];

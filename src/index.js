@@ -1,3 +1,5 @@
+const offset = require('document-offset')
+
 const util = require('./util')
 const marquee = require('./marquee')
 
@@ -27,6 +29,28 @@ const careerPosts = document.querySelectorAll('.career-post')
 const mapEl = document.querySelector('.map')
 let map
 
+const sections = document.querySelectorAll('article section')
+
+
+const handleScrolling = () => {
+  checkScrollPos()
+
+  window.addEventListener('scroll', () => {
+    checkScrollPos()
+  })
+}
+
+const checkScrollPos = () => {
+  sections.forEach(el => {
+    const off = offset(el)
+    let win = window.scrollY + (window.innerHeight - window.innerHeight / 5)
+    if (win >= off.top) {
+      if (!el.classList.contains('in')) el.classList.add('in')
+    } else {
+      if (el.classList.contains('in')) el.classList.remove('in')
+    }
+  }) 
+}
 
 const handleCareers = () => {
   careerPosts.forEach(el => {
@@ -59,12 +83,21 @@ const handleSearchEvents = () => {
 
 const closeSearch = () => {
   search.classList.remove('open')
+  searchInput.classList.remove('open')
+  searchClose.classList.remove('open')
   searchInput.blur()
 }
 
 const openSearch = () => {
   search.classList.add('open')
-  setTimeout(() => { searchInput.focus()}, 200)
+  setTimeout(() => { 
+    searchInput.focus()
+    searchInput.classList.add('open')
+  }, 500)
+
+  setTimeout(() => { 
+    searchClose.classList.add('open')
+  }, 400)
 }
 
 const handleVideos = () => {
@@ -133,6 +166,7 @@ const init = () => {
   setupNav()
   handleVideos()
   handleSearchEvents()
+  handleScrolling()
   
   if (marqueeEl) {
     console.log('yo')

@@ -83,7 +83,7 @@ get_header();
     $grey_btn_url = $text_grey['button_url']; 
   ?>
   <div>
-    <h2 class='c12'><?php echo $grey_title; ?></h2>
+    <h2 class='c12 mb0'><?php echo $grey_title; ?></h2>
       <div sm='px1 py1 tal' class='mw50 mxa px4 py2 mb1'><?php echo $grey_text; ?></div> 
       <div class='c12 db'>
         <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
@@ -99,11 +99,11 @@ get_header();
       $iRtLText = $iRtL['text'];
     ?>
 
-    <div sm='c12 px0 mb0 xo2' class='c6 px2'>
+    <div sm='c12 px0 mb0 xo2' class='c6 pr2'>
       <?php echo $iRtLText; ?>
     </div>
 
-    <div sm='c12 pr0 xo1 mb1' class='c6 pr2'>
+    <div sm='c12 pr0 xo1 mb1' class='c6 px2'>
       <picture>
         <source media="(max-width: 799px)" data-srcset="<?php echo $iRtLImage['sizes']['medium'] ?>" type="image/jpeg" />
         <source media="(min-width: 800px)" data-srcset="<?php echo $iRtLImage['url'] ?>" type="image/jpeg" /> 

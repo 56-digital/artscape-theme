@@ -11,6 +11,7 @@
   "author": "Timur Fattahov <timur@56.digital> (https://timur.red)",
   "license": "ISC",
   "dependencies": {
+    "document-offset": "^1.0.4",
     "draggable": "^4.2.0",
     "marquee3000": "^1.0.9",
     "postcss": "^6.0.22",
