@@ -69,12 +69,15 @@ article section.in {
 
 .header-links {padding: 0px 20px;} 
 
+.form p {display: none}
+
 .btn {
   border-radius: 1rem;
   border: 1px solid var(--black);
   font-size: 0.7rem;
   padding: 0.2rem 1.5rem;
   padding-top: 0.25rem;
+  transition: 0.3s ease-in-out background-color, 0.3s ease-in-out color, 0.3s ease-in-out border, 0.3s ease-in-out opacity;
 }
 
 
@@ -83,6 +86,8 @@ article section.in {
 .btn.btn-dark{background-color: var(--black); color: #fff;}
 .btn.btn-light{border: 1px solid #fff}
 
+.btn.btn-dark:hover {opacity: 0.7}
+.btn.btn-light:hover {opacity: 0.7}
 .btn:hover {color: #fff; background-color: var(--black)}
 
 p {font-size: 0.9rem}
