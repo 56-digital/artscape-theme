@@ -36,6 +36,9 @@ get_header();
       $iLtR = get_field('textL_imageR');
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
+  
+      $i_btn_title = $iLtR['button_title'];
+      $i_btn_url = $iLtR['button_url'];
     ?>
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
@@ -48,6 +51,9 @@ get_header();
     
     <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText; ?>
+      <?php if ($i_btn_title) : ?>
+        <a class='btn dib mt1' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
+      <?php endif; ?> 
     </div>
   </div>
 </section>
@@ -97,13 +103,19 @@ get_header();
       $iRtL = get_field('imageL_textR');
       $iRtLImage = $iRtL['image'];
       $iRtLText = $iRtL['text'];
+    
+      $ir_btn_title = $iRtL['button_title'];
+      $ir_btn_url = $iRtL['button_url'];
     ?>
 
     <div sm='c12 px0 mb0 xo2' class='c6 pr2'>
       <?php echo $iRtLText; ?>
+      <?php if ($ir_btn_title) : ?>
+        <a class='btn dib mt1' href='<?php echo $ir_btn_url; ?>'><?php echo $ir_btn_title; ?></a> 
+      <?php endif; ?> 
     </div>
 
-    <div sm='c12 pr0 xo1 mb1' class='c6 px2'>
+    <div sm='c12 px0 xo1 mb1' class='c6 px2'>
       <picture>
         <source media="(max-width: 799px)" data-srcset="<?php echo $iRtLImage['sizes']['medium'] ?>" type="image/jpeg" />
         <source media="(min-width: 800px)" data-srcset="<?php echo $iRtLImage['url'] ?>" type="image/jpeg" /> 
@@ -112,6 +124,25 @@ get_header();
     </div>
    </div>
 </section>
+
+
+<?php
+  $image_parking = get_field('parking_image');
+  $image_acc = get_field('accessibility_image');
+?>
+<div id='icon-parent' class='psf icon-parent t0 l0 c12 h100 z4 bgc-w'>
+  <div class='psr c12 h100'>
+    <div class='psa t0 l0 icon-close fsB px2 py2'> 
+      CLOSE
+    </div>
+    <div class='x xw xac xjc psr z1 h100 psr'>
+      <div class='icon-close psa t0 l0 c12 h100 curp'></div>
+
+      <div class='psr'><img class='c12 db img-parking' src='<?php echo $image_parking['url']; ?>'></div>
+      <div class='psr'><img class='c12 db img-access' src='<?php echo $image_acc['url']; ?>'></div> 
+    </div>
+  </div>
+</div>
 
 <section class='c12 pt2 bb1lg'>
   <div sm='py1 px1' class='mw70 mxa px2 py2'>
@@ -123,6 +154,10 @@ get_header();
     <div class='x xw xjb py2'>
       <div sm='c12 mb0' class='c6'>
         <h3>29 Queens Quay E <br/> Toronto, ON, M5E 0A4 </h3>
+        <div class='mb1'>
+          <div class='map-icon dib curp' data-open='parking'><img class='c12' src='<?php echo get_bloginfo('template_url'); ?>/assets/parking-icon.png' alt='Parking Information Icon'></div>
+          <div class='map-icon dib curp' data-open='access'><img class='c12' src='<?php echo get_bloginfo('template_url'); ?>/assets/access-icon.png' alt='Accessibility Information Icon'></div>
+        </div>
       </div>
     
       <div sm='c12' class='c6'>

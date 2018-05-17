@@ -162,12 +162,12 @@ get_header();
       <div class='c12'><?php echo $how_text; ?></div>
     </section>
     
-    <section sm='px0' class='steps c12 px4 py2 x xw'>
+    <section sm='px0' class='steps psr c12 px4 py2 x xw'>
       <?php 
         foreach($how_steps as $how_step) { ?>
         <div sm='c12 pt0 pb3' class='step px4 py4 c6'>
           <div class='rounded b1lg px2 py2'>
-            <span class='db fsC'>STEP</span>
+            <span class='db fsC step-title'>STEP</span>
             <h3><?php echo $how_step['step_title']; ?></h3>
             <div class='fsC'><?php echo $how_step['step_text']; ?></div>
           </div>

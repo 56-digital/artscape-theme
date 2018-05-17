@@ -167,4 +167,4 @@
     </div>
   </nav>
 
-<article>
+<article class='psr'>

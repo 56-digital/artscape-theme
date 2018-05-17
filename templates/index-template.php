@@ -56,7 +56,7 @@ get_header();
     </div>
   </section>
 
-  <section sm='pt2 pb0' class='marquee marquee3k c12 psr pt4 pb2 oh' data-speed='2'>
+  <section sm='pt2 pb0' class='marquee marquee3k c12 psr pt4 pb2 oh' data-speed='5'>
     <h2 sm='fsB'><?php echo get_field('marquee_text'); ?></h2>
   </section>
 

@@ -103,6 +103,9 @@ get_header();
       $iLtR = get_field('imageL_textR');
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
+
+      $i_btn_title = $iLtR['button_title'];
+      $i_btn_url = $iLtR['button_url'];
     ?>
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
@@ -115,6 +118,9 @@ get_header();
     
     <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText; ?>
+      <?php if ($i_btn_title) : ?>
+        <a class='btn dib mt1' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
+      <?php endif; ?> 
     </div>
   </div>
 </section>
@@ -160,6 +166,9 @@ get_header();
       $iLtR2 = get_field('imageL_textR2');
       $iLtRImage2 = $iLtR2['image'];
       $iLtRText2 = $iLtR2['text'];
+
+      $i2_btn_title = $iLtR2['button_title'];
+      $i2_btn_url = $iLtR2['button_url'];
     ?>
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
@@ -172,6 +181,9 @@ get_header();
     
     <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText2; ?>
+      <?php if ($i2_btn_title) : ?>
+        <a class='btn dib mt1' href='<?php echo $i2_btn_url; ?>'><?php echo $i2_btn_title; ?></a> 
+      <?php endif; ?> 
     </div>
   </div>
 </section>

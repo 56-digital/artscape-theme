@@ -6,8 +6,12 @@
 
   if ($post) {
     $post_title = $post['title']; 
-    $post_photo = $post['cover_photo'] ? $post['cover_photo'] : false;
-    $post_desc = $post['short_description'] ? $post['short_description'] : false;
+
+    $post_photo = false;
+    if (isset($post['cover_photo'])) $post_photo = $post['cover_photo'];
+
+    $post_desc = false;
+    if (isset($post['short_description'])) $post_desc = $post['short_description'];
   }
 
   $post_real_title = get_the_title($ID);

@@ -690,6 +690,95 @@ let map
 
 const sections = document.querySelectorAll('article section')
 
+const steps = document.querySelectorAll('.steps')
+
+const mapIcons = document.querySelectorAll('.map-icon')
+const iconParent = document.getElementById('icon-parent')
+const iconClose = document.querySelectorAll('.icon-close')
+
+const toggleIcons = () => {
+  mapIcons.forEach(icon => {
+    const attr = icon.getAttribute('data-open')
+    console.log(icon)
+    icon.addEventListener('click', () => {
+      iconParent.classList.add('open')
+      iconParent.classList.add(`img-${attr}`)
+    })
+  })
+  
+  iconClose.forEach(el => {
+    el.addEventListener('click', () => {
+      iconParent.classList.remove('open')
+      iconParent.classList.remove('img-access')
+      iconParent.classList.remove('img-parking')
+    })
+  })
+  
+}
+
+
+const createStepDivs = () => {
+  const nums = ['ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT']
+  steps.forEach((stepParent, i) => {
+    const lilSteps = stepParent.querySelectorAll('.step')
+
+    lilSteps.forEach((step, i) => {
+      const rounded = step.querySelector('.rounded')
+      const line = document.createElement('div')
+      const stepTitle = step.querySelector('.step-title')
+
+      stepTitle.innerHTML = `STEP ${nums[i]}` 
+       
+      line.classList.add('line') 
+      rounded.classList.add('rounded')
+      rounded.appendChild(line)
+      putLine(step, i)
+    })
+  })
+}
+
+const putLine = (step, i) => {
+  i = parseInt(i)
+  
+  const stepEl = step.querySelector('.rounded')
+  const stepOffset = offset(stepEl)
+  const line = step.querySelector('.line')
+
+  let nextStep = step.parentElement.querySelectorAll('.step')[i + 1]
+
+  if (nextStep) {
+    const nextEl = nextStep.querySelector('.rounded')
+    const nextOffset = offset(nextEl)
+
+    if (i % 2 === 0) {
+      const lineWidth =  nextOffset.left - (stepOffset.left + stepEl.offsetWidth) + 2
+      line.style.width = lineWidth + 'px' 
+      line.style.right = -lineWidth + 'px'
+      line.classList.add('line-vert')
+     } else {
+  
+      const parent = offset(nextEl.parentElement)
+
+      const x1 = nextOffset.left + nextEl.offsetWidth - 6
+      const y1 = nextOffset.top + (nextEl.offsetHeight * 1.8 ) - parent.top - 6
+      const x2 = stepOffset.left + 6 
+      const y2 = stepOffset.top + (stepEl.offsetHeight * 1.7 + stepEl.offsetHeight) - parent.top + 6
+ 
+
+      const dist = Math.ceil(Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)));
+      const angle = Math.atan2(y2-y1, x2-x1)*180/Math.PI;
+      const xshift = dist - Math.abs(x2-x1);
+      const yshift = Math.abs(y1-y2)/2;
+    
+      line.style.width = dist + 'px'
+      line.style.left = (x1 - xshift/2) + 'px'
+      line.style.top =  (Math.min(y1,y2) + yshift) + 'px'
+      line.style.transform = `rotate(${angle}deg)`
+      line.classList.add('line-hor')
+    } 
+  }
+}
+
 
 const handleScrolling = () => {
   checkScrollPos()
@@ -702,7 +791,7 @@ const handleScrolling = () => {
 const checkScrollPos = () => {
   sections.forEach(el => {
     const off = offset(el)
-    let win = window.scrollY + (window.innerHeight - window.innerHeight / 5)
+    let win = window.scrollY + (window.innerHeight - window.innerHeight / 10)
     if (win >= off.top) {
       if (!el.classList.contains('in')) el.classList.add('in')
     } else {
@@ -720,7 +809,6 @@ const handleCareers = () => {
 }
 
 const handleSearchEvents = () => {
-  
   document.addEventListener('keydown', e => {
     if (e.keyCode === 27 && search.classList.contains('open')) closeSearch()
     if (e.keyCode === 83 && e.ctrlKey === true && !search.classList.contains('open')) openSearch() 
@@ -820,17 +908,20 @@ const setupHeader = () => {
 }
 
 const init = () => {
-  loadDataEls()
+  handleScrolling()
   setupHeader()
   setupNav()
+  loadDataEls()
   handleVideos()
   handleSearchEvents()
-  handleScrolling()
   
   if (marqueeEl) {
     console.log('yo')
     marquee()
   }
+
+  if (steps) createStepDivs()
+  if (mapIcons) toggleIcons() 
 
   if (space) require('./drag') 
   if (careerPosts) handleCareers()

@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5 {
   padding: 4px 20px;
 }
 
+span.wpcf7-not-valid-tip {
+  margin-top: 0.5rem; margin-bottom: 1rem
+}
+
 article section {
   opacity: 0;
   transform: translateY(4rem);
@@ -122,7 +126,13 @@ a.bold {opacity: 0.4}
 
 .sponsors-logos div { height: 12rem; }
 
-.marquee h2{font-size: 9rem; box-sizing: border-box; padding-right:4rem}
+.marquee h2{font-size: 7rem; box-sizing: border-box; padding-right:4rem}
+
+#icon-parent{opacity: 0; visibility: hidden; transition: 0.3s ease-in-out opacity, 0.3s ease-in-out visibility}
+#icon-parent.open{opacity: 1; visibility: visible;}
+#icon-parent.img-parking .img-parking {display: block}
+#icon-parent.img-access .img-access {display: block}
+#icon-parent .img-access, #icon-parent .img-parking {display: none}
 
 .header-img {height: 350px; }
 @media (min-width: 1600px) {
@@ -139,6 +149,18 @@ a:not(.btn):hover, .a:hover {
 
 p a {text-decoration: underline}
 
+.step:nth-of-type(2n - 1) .rounded {
+  position: relative
+}
+
+.line{position: absolute}
+.line-vert {
+  border-bottom: 1px solid var(--lightGrey);
+  top: 50%; transform: translateY(-50%)
+}
+.line-hor {
+  border-bottom: 1px solid var(--lightGrey)
+}
 #map {height: calc(60vw - 8rem)}
 .space-container img {z-index: 0 !important}
 .space-container {
@@ -233,6 +255,8 @@ form {
   & .c4 { width: 28% }  
 }
 
+.form-input br { display: none}
+
 footer input {
   margin: 8px 0;
   padding: 4px 8px; border: 1px solid var(--lightGrey)
@@ -250,6 +274,11 @@ footer label {font-size: 10px}
 .search-icon svg {
   width: 16px; height: 16px;
 }
+
+.map-icon {height: 1.7rem; width: 1.7rem}
+.icon-parent {}
+.icon-parent img {width: 60vmin}
+
 @media (max-width: 1200px) {
   .nav{font-size: 12px}
   .btn-nav.btn {font-size: 9px}
