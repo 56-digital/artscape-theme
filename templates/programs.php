@@ -115,6 +115,13 @@ get_header();
           <source media="(min-width: 800px)" data-srcset="<?php echo $video_img['url'] ?>" type="image/jpeg" /> 
           <img class='c12 h100 ofc vam' data-src='<?php echo $video_img['url'] ?>' alt="<?php echo $video_img['caption'] ?>" />
         </picture> 
+        <div class='play-btn psa c curp'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+          </svg>
+        </div>
+
       </div>
     </div> 
   </div>

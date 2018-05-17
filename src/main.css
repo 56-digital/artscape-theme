@@ -29,7 +29,10 @@ body {
 
 .logo{width: 180px; padding: 20px;}
 
-a {text-decoration: none; color: inherit}
+a {text-decoration: none; color: inherit;
+  transition: 0.3s ease-in-out opacity, 0.3s ease-in-out color, 0.3s ease-in-out background-color;
+}
+
 h1, h2, h3, h4, h5 {
   font-weight: normal;
   font-family: var(--title);
@@ -73,6 +76,7 @@ article section.in {
   padding: 0.2rem 1.5rem;
   padding-top: 0.25rem;
 }
+
 
 .btn.btn-large { font-size: 1.1rem}
 
@@ -180,6 +184,10 @@ img[data-src] {
   &.loaded{opacity:1}
 }
 
+.sm-icon, .sm-icon svg {
+  width:1.4rem; height: 1.4rem;
+}
+
 .search-icon2 svg, .search-icon2 {width: 1.6rem; height: 1.6rem}
 .search-icon2 svg {transform: translateY(-0.1rem)}
 .search-bg{background-color: rgba(255, 255, 255, 0.9)}
@@ -222,7 +230,12 @@ footer .footer-logo {padding: 40px 20px}
 
 .img {height: calc(40vw - 12rem); background-color: var(--lightGrey)}
 
-.video.playing img {display: none}
+.video.playing img {opacity: 0}
+.video.playing .play-btn {opacity: 0}
+.video. img, .video .play-btn {opacity: 1}
+
+.play-btn, .play-btn svg {height: 8rem; width: 8rem; transition: 0.3s ease-in-out transform, 0.3s ease-in-out opacity}
+.play-btn svg {fill: #fff}
 
 
 .parent {
@@ -380,6 +393,9 @@ footer label {font-size: 10px}
   .marquee h2{font-size: 4rem}
   #map {height: calc(100vw - 2rem)}
   .sponsors-logos div { height: 6rem; }
+  .sm-icon, .sm-icon svg {
+    width:1.9rem; height: 1.9rem;
+  }
 }
 
 @media (max-width: 400px) {
