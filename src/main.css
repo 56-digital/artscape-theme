@@ -222,6 +222,11 @@ footer {font-size: 14px}
 footer .footer-logo {padding: 40px 20px}
 .footer-text{font-size: 10px}
 
+.footer-linx h2 {transition: 0.3s ease-in-out transform}
+.footer-linx .c6:hover h2 {
+  transform: scale(1.03, 1.03)
+}
+
 .about-intro {
   height: 40vw;
   clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);

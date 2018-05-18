@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php 
+    $suffix = 'Arscape Launchpad';
+    $intro = get_field('intro');
+    $meta = get_field('meta');
+  
+    // title
+    if ($meta['title']) {
+      $title = $meta['title']; 
+    } else if ($intro['title']) {
+      $title = $intro['title'];
+    } else {
+      $title = get_the_title(); 
+    }
+
+    // title
+    if ($meta['description']) {
+      $desc = $meta['description']; 
+    } else if ($intro['text']) {
+      $desc = $intro['text'];
+    } else {
+      $desc = '';
+    }
+
+    // image
+    if ($meta['image']) {
+      $image = $meta['image'];
+    } else if ($intro['image']) {
+      $image = $intro['image']; 
+    } else {
+      $image = '';
+    }
+  
+    $url = get_the_permalink();
+    
+  ?>
+
+  <title><?php echo $title ?> - Artscape Launchpad</title>
+  <meta name="description" content="<?php echo $desc; ?>">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="referrer" content="no-referrer">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Artscape Launchpad</title>
-  <meta name="robots" content="index,follow">
-  <meta name="googlebot" content="index,follow">
-  <meta name="referrer" content="no-referrer">
+  <meta property="og:url" content="<?php echo $url; ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?php echo $title; ?>">
+  <meta property="og:image" content="<?php echo $image; ?>">
+  <meta property="og:description" content="<?php echo $desc; ?>">
+  <meta property="og:site_name" content="<?php echo $title; ?>">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@LaunchpadTO">
+  <meta name="twitter:url" content="<?php echo $url; ?>">
+  <meta name="twitter:title" content="<?php echo $title; ?>">
+  <meta name="twitter:description" content="<?php echo $desc; ?>">
+  <meta name="twitter:image" content="<?php echo $image; ?>">
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/main.css">
   <meta name="theme-color" content="#000">
