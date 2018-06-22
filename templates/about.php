@@ -36,9 +36,14 @@ get_header();
       $iLtR = get_field('textL_imageR');
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
-  
-      $i_btn_title = $iLtR['button_title'];
-      $i_btn_url = $iLtR['button_url'];
+    
+
+      $i_btn = $iLtR['button'];
+      if ($i_btn) {
+        $i_btn_title = $i_btn['title'] ? $i_btn['title'] : $i_btn['url'];
+        $i_btn_url = $i_btn['url'];
+        $i_btn_target = $i_btn['target'] ? $i_btn['target'] : '_self';
+      }
     ?>
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
@@ -51,8 +56,8 @@ get_header();
     
     <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText; ?>
-      <?php if ($i_btn_title) : ?>
-        <a class='btn dib mt1' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
+      <?php if ($i_btn) : ?>
+        <a class='btn dib mt1' target='<?php echo $i_btn_target; ?>' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
       <?php endif; ?> 
     </div>
   </div>
@@ -80,19 +85,22 @@ get_header();
   </div> 
 </section>
 
-<section sm='py3' class='c12 tac bgc-g py4'>
+<section sm='py3' class='c12 tac bgc-g py4 bb1lg'>
   <?php 
     $text_grey = get_field('full_text_grey');
     $grey_title = $text_grey['title'];
     $grey_text = $text_grey['text'];
-    $grey_btn_title = $text_grey['button_title'];
-    $grey_btn_url = $text_grey['button_url']; 
+
+    $grey_btn = $text_grey['button'];
+    $grey_btn_title = $grey_btn['title'] ? $grey_btn['title'] : $grey_btn['url'];
+    $grey_btn_url = $grey_btn['url'];
+    $grey_btn_target = $grey_btn['target'] ? $grey_btn['target'] : '_self';
   ?>
   <div>
     <h2 class='c12 mb0'><?php echo $grey_title; ?></h2>
       <div sm='px1 py1 tal' class='mw50 mxa px4 py2 mb1'><?php echo $grey_text; ?></div> 
       <div class='c12 db'>
-        <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
+        <a class='btn dib' target='<?php echo $grey_btn_target; ?>' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
       </div>
   </div>
 </section>
@@ -103,15 +111,21 @@ get_header();
       $iRtL = get_field('imageL_textR');
       $iRtLImage = $iRtL['image'];
       $iRtLText = $iRtL['text'];
-    
-      $ir_btn_title = $iRtL['button_title'];
-      $ir_btn_url = $iRtL['button_url'];
+
+      $ir_btn = $iRtL['button'];
+
+      if ($ir_btn) {
+        $ir_btn_title = $ir_btn['title'] ? $ir_btn['title'] : $ir_btn['url'];
+        $ir_btn_url = $ir_btn['url'];
+        $ir_btn_target = $ir_btn['target'] ? $ir_btn['target'] : '_self';
+      }
+
     ?>
 
     <div sm='c12 px0 mb0 xo2' class='c6 pr2'>
       <?php echo $iRtLText; ?>
-      <?php if ($ir_btn_title) : ?>
-        <a class='btn dib mt1' href='<?php echo $ir_btn_url; ?>'><?php echo $ir_btn_title; ?></a> 
+      <?php if ($ir_btn) : ?>
+        <a class='btn dib mt1' target='<?php echo $ir_btn_target; ?>' href='<?php echo $ir_btn_url; ?>'><?php echo $ir_btn_title; ?></a> 
       <?php endif; ?> 
     </div>
 
@@ -130,9 +144,9 @@ get_header();
   $image_parking = get_field('parking_image');
   $image_acc = get_field('accessibility_image');
 ?>
-<div id='icon-parent' class='psf icon-parent t0 l0 c12 h100 z4 bgc-w'>
+<div id='icon-parent' class='psf icon-parent t0 l0 c12 h100 bgc-w'>
   <div class='psr c12 h100'>
-    <div class='psa t0 l0 icon-close fsB px2 py2'> 
+    <div class='psa t0 r0 icon-close fsB px2 py2'> 
       CLOSE
     </div>
     <div class='x xw xac xjc psr z1 h100 psr'>
@@ -146,14 +160,14 @@ get_header();
 
 <section class='c12 pt2 bb1lg'>
   <div sm='py1 px1' class='mw70 mxa px2 py2'>
-    <h3 class='ttu tac mb2'>Our Location</h3>
+    <h3 class='ttu tac mb2'>Where to find us</h3>
 
     <div id='map' class='map'>
 
     </div>
     <div class='x xw xjb py2'>
       <div sm='c12 mb0' class='c6'>
-        <h3>29 Queens Quay E <br/> Toronto, ON, M5E 0A4 </h3>
+        <h3>130 Queens Quay E <br/> Toronto, ON M5A 3Y5</h3>
         <div class='mb1'>
           <div class='map-icon dib curp' data-open='parking'><img class='c12' src='<?php echo get_bloginfo('template_url'); ?>/assets/parking-icon.png' alt='Parking Information Icon'></div>
           <div class='map-icon dib curp' data-open='access'><img class='c12' src='<?php echo get_bloginfo('template_url'); ?>/assets/access-icon.png' alt='Accessibility Information Icon'></div>
@@ -166,35 +180,10 @@ get_header();
     </div>
 </section>
 
-<section class='footer-linx tac x xac xw'>
-  <?php
-    $footer_left = get_field('footer_left');
-    $fl_title = $footer_left['title'];
-    $fl_btn_title = $footer_left['button_title'];
-    $fl_btn_url = $footer_left['button_url'];
+<?php 
+  if (get_field('footer_left')) {
+    get_template_part('components/footer');
+  }
+?>
 
-    $footer_right = get_field('footer_right');
-    $fr_title = $footer_right['title'];
-    $fr_btn_title = $footer_right['button_title'];
-    $fr_btn_url = $footer_right['button_url'];
-    
-  ?> 
-  <div sm='c12' class='c6 h100 br1lg'>
-    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-
-  <div sm='c12' class='c6 h100'>
-    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-</section>
 <?php get_footer(); ?>

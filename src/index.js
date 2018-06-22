@@ -37,6 +37,20 @@ const mapIcons = document.querySelectorAll('.map-icon')
 const iconParent = document.getElementById('icon-parent')
 const iconClose = document.querySelectorAll('.icon-close')
 
+const spaceOpened = document.getElementById('space-opened')
+const spaceOpen = document.querySelector('.space-open')
+const spaceClose = document.querySelector('.space-close')
+
+const toggleSpace = () => {
+  spaceOpen.addEventListener('click', () => {
+    spaceOpened.classList.add('open')
+  })
+
+  spaceOpened.addEventListener('click', () => {
+    spaceOpened.classList.remove('open')
+  })
+}
+
 const toggleIcons = () => {
   mapIcons.forEach(icon => {
     const attr = icon.getAttribute('data-open')
@@ -59,7 +73,7 @@ const toggleIcons = () => {
 
 
 const createStepDivs = () => {
-  const nums = ['ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT']
+  const nums = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT']
   steps.forEach((stepParent, i) => {
     const lilSteps = stepParent.querySelectorAll('.step')
 
@@ -74,8 +88,14 @@ const createStepDivs = () => {
       rounded.classList.add('rounded')
       rounded.appendChild(line)
       putLine(step, i)
+
+      window.addEventListener('resize', () => {
+        putLine(step, i)
+      })
     })
   })
+
+
 }
 
 const putLine = (step, i) => {
@@ -98,13 +118,13 @@ const putLine = (step, i) => {
       line.classList.add('line-vert')
      } else {
   
-      const parent = offset(nextEl.parentElement)
+
+      const parent = offset(nextEl.parentElement.parentElement)
 
       const x1 = nextOffset.left + nextEl.offsetWidth - 6
-      const y1 = nextOffset.top + (nextEl.offsetHeight * 1.8 ) - parent.top - 6
+      const y1 = nextOffset.top - parent.top + 3
       const x2 = stepOffset.left + 6 
-      const y2 = stepOffset.top + (stepEl.offsetHeight * 1.7 + stepEl.offsetHeight) - parent.top + 6
- 
+      const y2 = (stepOffset.top + stepEl.offsetHeight) - parent.top - 3
 
       const dist = Math.ceil(Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)));
       const angle = Math.atan2(y2-y1, x2-x1)*180/Math.PI;
@@ -263,6 +283,8 @@ const init = () => {
 
   if (steps) createStepDivs()
   if (mapIcons) toggleIcons() 
+
+  if (spaceOpened) toggleSpace()
 
   if (space) require('./drag') 
   if (careerPosts) handleCareers()

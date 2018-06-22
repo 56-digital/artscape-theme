@@ -79,16 +79,16 @@ get_header();
           } ?>
         </div>
   
-        <?php if (count($cp_mem) > 3) : ?>
           <div class='c12 tac mb1'>
             <a class='btn btn-dark btn-large dib ttu' href='<?php echo $cp_url ?>'>View All</a> 
           </div>  
-        <?php endif ?>
 
-        <div class='c12 tac'>
-          <a class='btn btn-dark btn-large dib ttu' href='<?php echo get_bloginfo('url'); ?>/programs'>View Programs</a> 
-        </div>
-
+        
+        <?php if ($cp_title == 'Program Alumni') : ?>
+          <div class='c12 tac'>
+            <a class='btn btn-dark btn-large dib ttu' href='<?php echo get_bloginfo('url'); ?>/programs'>View Programs</a> 
+          </div>
+        <?php endif; ?>
       
       </div>
     </section>
@@ -97,127 +97,37 @@ get_header();
   ?>
 </section>
 
-<section class='imageL_textR py2'>
-  <div sm='px1 py1' class='c12 x xw xac xjc px2 py4 mw70 mxa'>
-    <?php 
-      $iLtR = get_field('imageL_textR');
-      $iLtRImage = $iLtR['image'];
-      $iLtRText = $iLtR['text'];
 
-      $i_btn_title = $iLtR['button_title'];
-      $i_btn_url = $iLtR['button_url'];
+<section sm='py3 px1' class='imageL_textR bgc-g bt1lg bb1lg c12 px2 py4 mb2'>
+  <div class='c12 x xw xac xjc mxa mw70'>
+    <?php 
+      $iLtRG = get_field('imageL_textR_grey');
+      $iLtRGImage = $iLtRG['image'];
+      $iLtRGText = $iLtRG['text'];
     ?>
     
-    <div sm='c12 pr0 mb1' class='c6 pr2'>
+    <div sm='c12 mb2' class='c5 px2'>
       <picture>
-        <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
-        <img class='c12' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+        <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRGImage['sizes']['medium'] ?>" type="image/jpeg" />
+        <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRGImage['sizes']['large'] ?>" type="image/jpeg" /> 
+        <img class='c12 px4 op0 t-o' data-src='<?php echo $iLtRGImage['sizes']['medium'] ?>' alt="<?php echo $iLtRGImage['caption'] ?>" />
       </picture> 
     </div>
     
-    <div sm='c12 px0' class='c6 px2'>
-      <?php echo $iLtRText; ?>
-      <?php if ($i_btn_title) : ?>
-        <a class='btn dib mt1' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
-      <?php endif; ?> 
+    <div sm='c12 px0' class='c7 px2'>
+      <?php echo $iLtRGText; ?>
     </div>
   </div>
 </section>
 
-<section sm='px0' class='c12 pb4 px2 bb1lg'>
-  <div class='c12 x xw xjc'>
-    <?php 
-      $roundL = get_field('rounded_text_block_left');
-      $rl_title = $roundL['title'];
-      $rl_text = $roundL['text'];
 
-    ?>
-    <div sm='c12 px1' class='x xw xac xjc mb1 c6 px2'>
-      <div class='px2 py2 b1lg rounded'>
-        <h3 sm='mb1' class='c12 tac mb2'><?php echo $rl_title; ?></h3> 
-        <div sm='mb0' class='c12 mb2'>
-          <?php echo $rl_text; ?>
-        </div>
-      </div>
-    </div>
 
-    <?php 
-      $roundR = get_field('rounded_text_block_right');
-      $rr_title = $roundR['title'];
-      $rr_text = $roundR['text'];
 
-    ?>
-    <div sm='c12 px1 mb0' class='x xw xac xjc mb1 c6 px2'>
-      <div class='px2 py2 rounded b1lg'>
-        <h3 sm='mb1' class='c12 tac mb2'><?php echo $rr_title; ?></h3> 
-        <div sm='mb0' class='c12 mb2'>
-          <?php echo $rr_text; ?>
-        </div>
-      </div>
-    </div>
+<?php 
+  if (get_field('footer_left')) {
+    get_template_part('components/footer');
+  }
+?>
 
-  </div>
-</section>
-
-<section class='imageL_textR py2 bb1lg'>
-  <div sm='px1 py1' class='c12 x xw xac xjc px2 py4 mw70 mxa'>
-    <?php 
-      $iLtR2 = get_field('imageL_textR2');
-      $iLtRImage2 = $iLtR2['image'];
-      $iLtRText2 = $iLtR2['text'];
-
-      $i2_btn_title = $iLtR2['button_title'];
-      $i2_btn_url = $iLtR2['button_url'];
-    ?>
-    
-    <div sm='c12 pr0 mb1' class='c6 pr2'>
-      <picture>
-        <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage2['sizes']['medium'] ?>" type="image/jpeg" />
-        <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage2['url'] ?>" type="image/jpeg" /> 
-        <img class='c12' data-src='<?php echo $iLtRImage2['url'] ?>' alt="<?php echo $iLtRImage2['caption'] ?>" />
-      </picture> 
-    </div>
-    
-    <div sm='c12 px0' class='c6 px2'>
-      <?php echo $iLtRText2; ?>
-      <?php if ($i2_btn_title) : ?>
-        <a class='btn dib mt1' href='<?php echo $i2_btn_url; ?>'><?php echo $i2_btn_title; ?></a> 
-      <?php endif; ?> 
-    </div>
-  </div>
-</section>
-
-<section class='footer-linx tac x xac xw'>
-  <?php
-    $footer_left = get_field('footer_left');
-    $fl_title = $footer_left['title'];
-    $fl_btn_title = $footer_left['button_title'];
-    $fl_btn_url = $footer_left['button_url'];
-
-    $footer_right = get_field('footer_right');
-    $fr_title = $footer_right['title'];
-    $fr_btn_title = $footer_right['button_title'];
-    $fr_btn_url = $footer_right['button_url'];
-    
-  ?> 
-  <div sm='c12' class='c6 h100 br1lg'>
-    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-
-  <div sm='c12' class='c6 h100'>
-    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-</section>
 
 <?php get_footer(); ?>

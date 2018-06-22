@@ -43,13 +43,14 @@ h1, h2, h3, h4, h5 {
 
 .rounded, .btn {border-radius: 1rem}
 .nav-ul {flex-grow: 1; padding-right: 20px}
-.header-img img{filter: brightness(0.5)}
+.header-img img{filter: brightness(0.85)}
 
 .btn-nav.btn {
   border-radius: 13px;
   font-size: 10px;
   padding: 4px 20px;
 }
+
 
 span.wpcf7-not-valid-tip {
   margin-top: 0.5rem; margin-bottom: 1rem
@@ -60,6 +61,15 @@ article section {
   transform: translateY(4rem);
   transition: 0.3s ease-in-out opacity, 0.3s ease-in-out transform;
 }
+
+.footer-logo .logo {padding: 0; margin-bottom: 2rem}
+.logo {width: 9rem; box-sizing: border-box}
+.logo svg {
+  fill: #fff;
+  width: 9rem;
+}
+
+footer .logo svg {fill: #000}
 
 article section.in {
   opacity: 1; 
@@ -72,6 +82,7 @@ article section.in {
 .form p {display: none}
 
 .btn {
+  text-transform: uppercase;
   border-radius: 1rem;
   border: 1px solid var(--black);
   font-size: 0.7rem;
@@ -151,6 +162,10 @@ a.bold {opacity: 0.4}
   .header-img {height: 200px}
 }
 
+@media (min-width: 1200px) {
+  /* .nav-footer{padding: 0 2rem} */
+}
+
 a:not(.btn), .a{transition: 0.3s ease-in-out opacity}
 a:not(.btn):hover, .a:hover {
   opacity: 0.7; 
@@ -161,6 +176,15 @@ p a {text-decoration: underline}
 .step:nth-of-type(2n - 1) .rounded {
   position: relative
 }
+
+.space-open {
+  height: 3rem;width: 3rem;
+  bottom: 1rem; right: 1rem;
+}
+#space-opened {z-index: 11; opacity: 0; visibility: hidden; transition: 0.3s ease-in-out opacity, 0.3s ease-in-out visibility}
+#space-opened.open {opacity: 1; visibility: visible;}
+
+.space-open svg {height: 3rem; width: 3rem;  background-color: #fff;   border-radius: 50%; padding:0.4rem}
 
 .line{position: absolute}
 .line-vert {
@@ -230,7 +254,6 @@ footer .footer-logo {padding: 40px 20px}
 .about-intro {
   height: 40vw;
   clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
-  filter: brightness(0.5);
 }
 
 .mob-logo{display: none}
@@ -251,6 +274,20 @@ footer .footer-logo {padding: 40px 20px}
 .parent {
   min-height: 100vh;
 }
+
+.mob-nav-btn {display: none}
+.mob-nav-btn, .x-btn {
+  top: 10px; right: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--lightGrey);
+  padding: 10px; 
+  background-color: #fff;
+  z-index: 10;
+  
+  & svg {height: 30px; width: 30px;}
+}
+
+.space-close{position: fixed;}
 
 .asfs {align-self:flex-start}
 .asfe{align-self: flex-end}
@@ -280,6 +317,9 @@ form {
 
 .form-input br { display: none}
 
+form.form-footer input { margin: auto }
+.index-label {font-size: 0.8rem}
+
 footer input {
   margin: 8px 0;
   padding: 4px 8px; border: 1px solid var(--lightGrey)
@@ -299,7 +339,7 @@ footer label {font-size: 10px}
 }
 
 .map-icon {height: 1.7rem; width: 1.7rem}
-.icon-parent {}
+.icon-parent {z-index: 10}
 .icon-parent img {width: 60vmin}
 
 @media (max-width: 1200px) {
@@ -313,6 +353,7 @@ footer label {font-size: 10px}
   .header-links{padding: 0 10px}
 }
 
+.light-img {width: 4rem}
 
 
 @media (max-width: 1000px) {
@@ -321,17 +362,9 @@ footer label {font-size: 10px}
 }
 
 @media (max-width: 1010px) {
-  .mob-nav-btn {
-    top: 10px; right: 10px;
-    border-radius: 14px;
-    border: 1px solid var(--lightGrey);
-    padding: 10px; 
-    background-color: #fff;
-    z-index: 10;
-    display: block;
-    
-    & svg {height: 30px; width: 30px;}
-  }
+
+
+  .mob-nav-btn {display: block;}
 
   .header-caption {
     top: inherit; bottom: 0;
@@ -372,6 +405,8 @@ footer label {font-size: 10px}
   .fsC, p {font-size: 0.8rem}
 
   [sm~='fsD']{font-size: 0.7rem} 
+
+  .line{display: none}
 
   .img {height: calc(60vw); background-color: var(--lightGrey)}
 

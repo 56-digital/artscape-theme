@@ -26,8 +26,12 @@ get_header();
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
 
-      $i_btn_title = $iLtR['button_title'];
-      $i_btn_url = $iLtR['button_url'];
+      $i_btn = $iLtR['button'];
+      if ($i_btn) {
+        $i_btn_title = $i_btn['title'] ? $i_btn['title'] : $i_btn['url'];
+        $i_btn_url = $i_btn['url'];
+        $i_btn_target = $i_btn['target'] ? $i_btn['target'] : '_self';
+      }
     ?>
 
     
@@ -41,8 +45,8 @@ get_header();
     
     <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText; ?>
-      <?php if ($i_btn_title) : ?>
-        <a class='btn dib mt1' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
+      <?php if ($i_btn) : ?>
+        <a class='btn dib mt1' target='<?php echo $i_btn_target; ?>' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
       <?php endif; ?> 
     </div>
   </div>
@@ -56,7 +60,7 @@ get_header();
     $loc = get_sub_field('location');
     $pos = get_sub_field('position');
     $text = get_sub_field('text');
-    $url = get_the_permalink();
+    $url = get_sub_field('apply_url');
   ?>
     <div class='py1 bb1lg career-post oh'>
       <div class='c12 x xw xac curp'>

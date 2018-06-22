@@ -25,6 +25,13 @@ get_header();
       $iLtR = get_field('imageL_textR');
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
+
+      $i_btn = $iLtR['button'];
+      if ($i_btn) {
+        $i_btn_title = $i_btn['title'] ? $i_btn['title'] : $i_btn['url'];
+        $i_btn_url = $i_btn['url'];
+        $i_btn_target = $i_btn['target'] ? $i_btn['target'] : '_self';
+      }
     ?>
     
     <div sm='c12 pr0 mb1' class='c6 pr2'>
@@ -37,37 +44,43 @@ get_header();
     
     <div sm='c12 px0' class='c6 px2'>
       <?php echo $iLtRText; ?>
+      <?php if ($i_btn) : ?>
+        <a class='btn dib mt1' target='<?php echo $i_btn_target; ?>' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
+      <?php endif; ?> 
     </div>
   </div>
 </section>
 
-<section sm='px1 pt3 pb0' class='c12 py4 px2 tac'>
-  <div class='c12 mxa mw70'>
-    <?php
-      $facilities = get_field('our_facilities', 6);
-      $fac_title = $facilities['title'];
-      $fac_elements = $facilities['repeating_elements'];
-      $fac_link = $facilities['link'];
-    ?>
-    <h3><?php echo $fac_title; ?></h3>
-    <div sm='py1' class='x xw xac xjb py2 mb2 lh1-5'>
-      <?php 
-        foreach($fac_elements as $fac_el) { ?>
-        <div sm='c12' class='c4 fsB'><?php echo $fac_el['title']; ?></div>
-      <?php } ?>
-    </div>
-    <div class='c12 psr mb2'>
-      <a class='btn dib' href='<?php echo $fac_link; ?>'>LEARN MORE ABOUT OUR SPACES</a> 
+
+<?php 
+  $space = get_field('the_space_image');
+?>
+<div id='space-opened' class='psf curp t0 r0 c12 bgc-w os vh100 bgc-g'>
+  <div class='psr x xw xac'>
+    <aside class='x-btn space-close curp'>
+      <svg class='vam' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </aside>
+    <div class='x xw xac xjb c12 h100'>
+      <img class='c12' data-src='<?php echo $space['url']; ?>' alt='The Space Image'>
     </div>
   </div>
-</section>
+</div>
 
-<section id='space' class='c12 py2 curd'>
-  <?php 
-    $space = get_field('the_space_image');
-    
-  ?>
+
+
+<section id='space' class='c12 curd'>
+
   <div class='space-container oh psr bgc-b'>
+    <div class='space-open psa b0 r0 z1 curp'>
+      <svg viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+      </svg>
+    </div>
+
     <figure class='space-parent oh c12'>
       <picture>
         <source media="(max-width: 799px)" data-srcset="<?php echo $space['sizes']['medium'] ?>" type="image/jpeg" />
@@ -101,47 +114,24 @@ get_header();
   <?php 
     $text_grey = get_field('text_block_grey');
     $grey_title = $text_grey['title'];
-    $grey_btn_title = $text_grey['button_title'];
-    $grey_btn_url = $text_grey['button_url']; 
+
+    $g_btn = $text_grey['button'];
+    $g_btn_title = $g_btn['title'] ? $g_btn['title'] : $g_btn['url'];
+    $g_btn_url = $g_btn['url'];
+    $g_btn_target = $g_btn['target'] ? $g_btn['target'] : '_self';
   ?>
   <div class='mw50 mxa px2'>
       <h2 class='c12 mb2'><?php echo $grey_title; ?></h2>
       <div class='c12 db'>
-        <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
+         <a class='btn dib mt1' target='<?php echo $g_btn_target; ?>' href='<?php echo $g_btn_url; ?>'><?php echo $g_btn_title; ?></a> 
       </div>
   </div>
 </section>
 
-<section class='footer-linx tac x xac xw'>
-  <?php
-    $footer_left = get_field('footer_left');
-    $fl_title = $footer_left['title'];
-    $fl_btn_title = $footer_left['button_title'];
-    $fl_btn_url = $footer_left['button_url'];
-
-    $footer_right = get_field('footer_right');
-    $fr_title = $footer_right['title'];
-    $fr_btn_title = $footer_right['button_title'];
-    $fr_btn_url = $footer_right['button_url'];
-    
-  ?> 
-  <div sm='c12' class='c6 h100 br1lg'>
-    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-
-  <div sm='c12' class='c6 h100'>
-    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-</section>
+<?php 
+  if (get_field('footer_left')) {
+    get_template_part('components/footer');
+  }
+?>
 
 <?php get_footer(); ?>

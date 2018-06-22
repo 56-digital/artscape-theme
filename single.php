@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<article sm='pb1' class='c12 pb4 x xw xjc'>
+<article sm='pb1' class='c12 pb4 x xw xjc bb1lg'>
   <section sm='py2' class='c12 pt4 pb2'>
     <?php 
       $intro = get_field('intro');
@@ -12,25 +12,28 @@
     <div class='c12 tac pb1'>
       <div class='mxa mw50 px2'>
         <h1><?php echo $intro_title; ?></h1>  
-        <div sm='fsC mb2' class='c12 fsB mb4'>
+        <div sm='fsC mb2' class='c12 fsB'>
           <?php echo $intro_text; ?>
         </div>
       </div>
 
-      <div sm='px1' class='c12 mw70 mxa px4'>
       <?php if ($intro_img) : ?>
-        <figure class='c12'> 
-          <picture>
-            <source media="(max-width: 799px)" data-srcset="<?php echo $intro_img['sizes']['medium'] ?>" type="image/jpeg" />
-            <source media="(min-width: 800px)" data-srcset="<?php echo $intro_img['url'] ?>" type="image/jpeg" /> 
-            <img class='c12' data-src='<?php echo $intro_img['url'] ?>' alt="<?php echo $intro_img['caption'] ?>" />
-          </picture> 
-          <?php if ($intro_img['caption']) : ?>
-            <figcaption class='py1 fsC tal'><?php echo $intro_img['caption']; ?></figcaption> 
-          <?php endif; ?>
-        </figure>
+        <div sm='px1' class='c12 mw70 mxa px4 mt4'>
+       
+          <figure class='c12'> 
+            <picture>
+              <source media="(max-width: 799px)" data-srcset="<?php echo $intro_img['sizes']['medium'] ?>" type="image/jpeg" />
+              <source media="(min-width: 800px)" data-srcset="<?php echo $intro_img['url'] ?>" type="image/jpeg" /> 
+              <img class='c12' data-src='<?php echo $intro_img['url'] ?>' alt="<?php echo $intro_img['caption'] ?>" />
+            </picture> 
+            <?php if ($intro_img['caption']) : ?>
+              <figcaption class='py1 fsC tal'><?php echo $intro_img['caption']; ?></figcaption> 
+            <?php endif; ?>
+          </figure>
+
+        </div>
       <?php endif; ?> 
-      </div>
+
     </div>
   </section>
 
@@ -56,38 +59,9 @@
 
 </article>
 
-<?php
-  $footer_left = get_field('footer_left');
-  $fl_title = $footer_left['title'];
-  $fl_btn_title = $footer_left['button_title'];
-  $fl_btn_url = $footer_left['button_url'];
-
-  $footer_right = get_field('footer_right');
-  $fr_title = $footer_right['title'];
-  $fr_btn_title = $footer_right['button_title'];
-  $fr_btn_url = $footer_right['button_url'];
-  
-  if ($fl_title && $fr_title) :  
-?> 
-<section class='footer-linx bt1lg tac x xac xw'>
-  <div sm='c12' class='c6 h100 br1lg'>
-    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-
-  <div sm='c12' class='c6 h100'>
-    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-</section>
-
-<?php endif; ?>
+<?php 
+  if (get_field('footer_left')['title']) {
+    get_template_part('components/footer');
+  }
+?>
 <?php get_footer(); ?>

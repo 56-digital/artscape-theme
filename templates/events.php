@@ -35,7 +35,7 @@ get_header();
   </div>
 </section>
 
-<section sm='mb0 bb1lg' class='c12 mb2'>
+<section sm='mb0 bb1lg' class='c12 pb2 bb1lg'>
   <div sm='py2' class='c12 mxa mw70 px2 py4'>
     <div sm='dn' class='x xw bb1b'>
       <h3 class='c3'>TITLE</h3>
@@ -78,35 +78,9 @@ get_header();
   </div>
 </section>
 
-<section class='footer-linx tac x xac xw bt1lg'>
-  <?php
-    $footer_left = get_field('footer_left');
-    $fl_title = $footer_left['title'];
-    $fl_btn_title = $footer_left['button_title'];
-    $fl_btn_url = $footer_left['button_url'];
-
-    $footer_right = get_field('footer_right');
-    $fr_title = $footer_right['title'];
-    $fr_btn_title = $footer_right['button_title'];
-    $fr_btn_url = $footer_right['button_url'];
-    
-  ?> 
-  <div sm='c12' class='c6 h100 br1lg'>
-    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fl_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-
-  <div sm='c12' class='c6 h100'>
-    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 sm='mb2 lh1' class='fsA mb3 px2 pt4'><?php echo $fr_title; ?></h2>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-</section>
+<?php 
+  if (get_field('footer_left')) {
+    get_template_part('components/footer');
+  }
+?>
 <?php get_footer(); ?>

@@ -36,15 +36,18 @@ get_header();
 <?php 
   $text_grey = get_field('text_block_grey');
   $grey_title = $text_grey['title'];
-  $grey_btn_title = $text_grey['button_text'];
-  $grey_btn_url = $text_grey['button_url']; 
+
+  $grey_btn = $text_grey['button'];
+  $grey_btn_title = $grey_btn['title'] ? $grey_btn['title'] : $grey_btn['url'];
+  $grey_btn_url = $grey_btn['url'];
+  $grey_btn_target = $grey_btn['target'] ? $grey_btn['target'] : '_self';
   if ($text_grey) :
 ?>
-<section class='c12 tac bgc-g py4'>
+<section class='c12 tac bgc-g py4 bt1lg'>
   <div class='mw50 mxa px2'>
       <h2 class='c12 mb2'><?php echo $grey_title; ?></h2>
       <div class='c12 db'>
-        <a class='btn dib' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
+        <a class='btn dib' target='<?php echo $grey_btn_target; ?>' href='<?php echo $grey_btn_url; ?>'><?php echo $grey_btn_title; ?></a> 
       </div>
   </div>
 </section>

@@ -25,11 +25,37 @@ get_header();
       $iLtR = get_field('imageL_textR');
       $iLtRImage = $iLtR['image'];
       $iLtRText = $iLtR['text'];
+      $iLtR_video = $iLtR['video'];
 
-      $i_btn_title = $iLtR['button_title'];
-      $i_btn_url = $iLtR['button_url'];
+      $i_btn = $iLtR['button'];
+      if ($i_btn) {
+        $i_btn_title = $i_btn['title'] ? $i_btn['title'] : $i_btn['url'];
+        $i_btn_url = $i_btn['url'];
+        $i_btn_target = $i_btn['target'] ? $i_btn['target'] : '_self';
+      }
     ?>
     
+    <?php if ($iLtR_video) : ?>
+    <div sm='c12 pr0 mb1' class='c6 pr2'>
+      <div class='video h100 oh c12 psr'>
+        <video data-src="<?php echo $iLtR_video; ?>" loop class='c12'></video>
+        <figure class='psa t0 l0 c12 h100 oh curp'>
+          <picture>
+            <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
+            <source media="(min-width: 800px)" data-srcset="<?php echo $iLtRImage['url'] ?>" type="image/jpeg" /> 
+            <img class='c12 vam' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
+          </picture> 
+        </figure>
+        <div class='play-btn psa c curp'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <?php else : ?>
     <div sm='c12 pr0 mb1' class='c6 pr2'>
       <picture>
         <source media="(max-width: 799px)" data-srcset="<?php echo $iLtRImage['sizes']['medium'] ?>" type="image/jpeg" />
@@ -37,35 +63,67 @@ get_header();
         <img class='c12' data-src='<?php echo $iLtRImage['url'] ?>' alt="<?php echo $iLtRImage['caption'] ?>" />
       </picture> 
     </div>
+  <?php endif; ?>
     
     <div sm='c12 px0 mb1' class='c6 px2'>
       <?php echo $iLtRText; ?>
-      <?php if ($i_btn_title) : ?>
-        <a class='btn dib mt1' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
+      <?php if ($i_btn) : ?>
+        <a class='btn dib mt1' target='<?php echo $i_btn_target; ?>' href='<?php echo $i_btn_url; ?>'><?php echo $i_btn_title; ?></a> 
       <?php endif; ?> 
     </div>
   </div>
 </section>
 
-<section sm='pb3 px1' class='c12 pb4 px2 bb1lg'>
-  <?php 
-    $round = get_field('rounded_text_block');
-    $r_title = $round['title'];
-    $r_text = $round['text'];
-    $r_btn_title = $round['button_title'];
-    $r_btn_url = $round['button_url'];
+<section sm='px0' class='c12 pb4 px2 bb1lg'>
+  <div class='c12 x xw xjc'>
+    <?php 
+      $roundL = get_field('rounded_text_block_left');
+      $rl_title = $roundL['title'];
+      $rl_text = $roundL['text'];
 
-  ?>
-  <div class='x xw xac xjc mb1 mw70 mxa '>
-    <div sm='c12' class='c6 px2 py2 rounded b1lg'>
-      <h3 sm='mb1' class='c12 tac mb2'><?php echo $r_title; ?></h3> 
-      <div class='c12 mb2'>
-        <?php echo $r_text; ?>
-      </div>
-      <div class='c12 tac'>
-        <a class='btn dib' href='<?php echo $r_btn_url; ?>'><?php echo $r_btn_title; ?></a> 
+      $rl_btn = $roundL['button'];
+      $rl_btn_title = $rl_btn['title'] ? $rl_btn['title'] : $rl_btn['url'];
+      $rl_btn_url = $rl_btn['url'];
+      $rl_btn_target = $rl_btn['target'] ? $rl_btn['target'] : '_self';
+
+    ?>
+    <div sm='c12 px1' class='x xw xac xjc mb1 c6 px2'>
+      <div class='px2 py2 b1lg rounded c12'>
+        <h3 sm='mb1' class='c12 tac mb2'><?php echo $rl_title; ?></h3> 
+        <div sm='mb0' class='c12 mb2'>
+          <?php echo $rl_text; ?>
+        </div>
+        <div class='c12 tac'>
+          <a sm='mt1' class='btn dib' target='<?php echo $rl_btn_target; ?>' href='<?php echo $rl_btn_url; ?>'><?php echo $rl_btn_title; ?></a> 
+
+        </div>
       </div>
     </div>
+
+    <?php 
+      $roundR = get_field('rounded_text_block_right');
+      $rr_title = $roundR['title'];
+      $rr_text = $roundR['text'];
+
+      $rr_btn = $roundR['button'];
+      $rr_btn_title = $rr_btn['title'] ? $rr_btn['title'] : $rr_btn['url'];
+      $rr_btn_url = $rr_btn['url'];
+      $rr_btn_target = $rr_btn['target'] ? $rr_btn['target'] : '_self';
+
+    ?>
+    <div sm='c12 px1 mb0' class='x xw xac xjc mb1 c6 px2'>
+      <div class='px2 py2 rounded b1lg c12'>
+        <h3 sm='mb1' class='c12 tac mb2'><?php echo $rr_title; ?></h3> 
+        <div sm='mb0' class='c12 mb2'>
+          <?php echo $rr_text; ?>
+        </div>
+        <div class='c12 tac'>
+          <a sm='mt1' class='btn dib' target='<?php echo $rr_btn_target; ?>' href='<?php echo $rr_btn_url; ?>'><?php echo $rr_btn_title; ?></a> 
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -75,11 +133,16 @@ get_header();
   if (have_rows('tiers')) : while (have_rows('tiers')) : the_row();   
   
   $tier_title = get_sub_field('tier_title');
+  $tier_text = get_sub_field('text');
   $logos = get_sub_field('logos');
 ?>
   <section class='c12 px2 py2 tierz bb1lg'>
     <h3 class='c12 tac mb0'><?php echo $tier_title; ?></h3>
-    <div sm='pt1 pb0' class='c12 mxa mw70 py2 x xw xac'>
+    <?php 
+      if ($tier_text) : ?>
+    <div sm='px0' class='c12 mw50 mxa px2 pt2 pb1'><?php echo $tier_text; ?></div>
+    <?php endif; ?> 
+    <div sm='pt1 pb0' class='c12 mxa mw70 py2 x xw xac xjc'>
       <?php 
         if (have_rows('logos')) : while (have_rows('logos')) : the_row(); 
           $icon = get_sub_field('logo');
@@ -94,41 +157,10 @@ get_header();
 <?php
   endwhile; endif;
 ?>
-
-<section class='footer-linx tac x xac xw'>
-  <?php
-    $footer_left = get_field('footer_left');
-    $fl_title = $footer_left['title'];
-    $fl_text = $footer_left['text'];
-    $fl_btn_title = $footer_left['button_title'];
-    $fl_btn_url = $footer_left['button_url'];
-
-    $footer_right = get_field('footer_right');
-    $fr_title = $footer_right['title'];
-    $fr_text = $footer_right['text'];
-    $fr_btn_title = $footer_right['button_title'];
-    $fr_btn_url = $footer_right['button_url'];
-    
-  ?> 
-  <div sm='c12' class='c6 h100 br1lg'>
-    <a sm='px2 py0 bb1lg' class='py4 px4 db h100 c12' href='<?php echo $fl_btn_url; ?>'>
-      <h2 sm='mb0 pt3' class='fsB px2 pt4 mb0'><?php echo $fl_title; ?></h2>
-      <div class='c12 py2'><?php echo $fl_text; ?></div>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fl_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-
-  <div sm='c12' class='c6 h100'>
-    <a sm='px2 py0' class='py4 px4 db c12 h100' href='<?php echo $fr_btn_url; ?>'>
-      <h2 sm='mb0 pt3' class='fsB px2 pt4 mb0'><?php echo $fr_title; ?></h2>
-      <div class='c12 py2'><?php echo $fr_text; ?></div>
-      <div class='c12 pb4'>
-        <div class='btn dib'><?php echo $fr_btn_title; ?></div> 
-      </div>
-    </a>
-  </div> 
-</section>
+<?php 
+  if (get_field('footer_left')) {
+    get_template_part('components/footer-expand');
+  }
+?>
 
 <?php get_footer(); ?>
