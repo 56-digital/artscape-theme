@@ -396,7 +396,7 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;overflow-y:scroll;-webk
   height: 60vw;
   overflow: hidden;
   cursor: move !important;
-}.career-content {max-height: 0; -webkit-transition: 0.3s ease-in-out max-height; transition: 0.3s ease-in-out max-height}.career-post.open .career-content {max-height: 70rem}img[data-src] {
+}.career-content {max-height: 0; -webkit-transition: 0.3s ease-in-out max-height; transition: 0.3s ease-in-out max-height}.career-post.open .career-content {max-height: 200rem}img[data-src] {
   opacity: 0;
   -webkit-transition: 0.3s ease-in-out opacity;
   transition: 0.3s ease-in-out opacity
