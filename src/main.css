@@ -204,7 +204,7 @@ p a {text-decoration: underline}
 
 
 .career-content {max-height: 0; transition: 0.3s ease-in-out max-height}
-.career-post.open .career-content {max-height: 30rem}
+.career-post.open .career-content {max-height: 70rem}
 
 img[data-src] {
   opacity: 0;
